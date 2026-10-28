@@ -20,44 +20,7 @@
       </button>
     </div>
 
-    <!-- AI Practice Section -->
-    <section class="ai-practice-section">
-      <h2 class="section-title">
-        <FeatherIcon type="cpu" :size="24" /> Luyện tập với AI
-      </h2>
-      <div class="practice-grid">
-        <div class="practice-card card card-clickable" @click="goToWordTypes">
-          <div class="practice-icon" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
-            <FeatherIcon type="git-branch" :size="32" />
-          </div>
-          <div class="practice-info">
-            <h3>Phân loại từ</h3>
-            <p>Học nhận biết 8 loại từ cơ bản (Noun, Verb, Adj...) với quiz AI</p>
-          </div>
-          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
-        </div>
-
-        <div class="practice-card card card-clickable" @click="startSRSReview">
-          <div class="practice-icon srs-icon"
-            style="background: linear-gradient(135deg, #FF6B35, #F7931E); position: relative;">
-            <FeatherIcon type="clock" :size="32" />
-            <span class="notification-badge" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }}</span>
-          </div>
-          <div class="practice-info">
-            <h3>Ôn tập SRS</h3>
-            <p v-if="reviewStats.dueToday > 0">Bạn có {{ reviewStats.dueToday }} từ cần ôn tập ngay hôm nay</p>
-            <p v-else>Bạn đã hoàn thành bài ôn tập hôm nay!</p>
-          </div>
-          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Dashboard Widget -->
-    <section class="dashboard-section">
-      <DashboardWidget ref="dashboardRef" />
-    </section>
-
+    <!-- 1. Sách Từ Vựng -->
     <section class="books-section">
       <h2 class="section-title">
         <FeatherIcon type="book" :size="24" /> Sách Từ Vựng
@@ -77,6 +40,58 @@
       <div v-else class="grid grid-cols-2">
         <BookCard v-for="book in books" :key="book.id" :book="book" :topic-count="topicCounts[book.id] || 0"
           @click="goToBook(book.id)" />
+      </div>
+    </section>
+
+    <!-- 2. Học từ mới & Tiến trình học -->
+    <section class="dashboard-section">
+      <h2 class="section-title">
+        <FeatherIcon type="trending-up" :size="24" /> Học Từ Mới & Tiến Trình
+      </h2>
+      <DashboardWidget ref="dashboardRef" />
+    </section>
+
+    <!-- 3. Luyện tập với AI -->
+    <section class="ai-practice-section">
+      <h2 class="section-title">
+        <FeatherIcon type="cpu" :size="24" /> Luyện Tập Với AI
+      </h2>
+      <div class="practice-grid">
+        <div class="practice-card card card-clickable" @click="goToWordTypes">
+          <div class="practice-icon" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
+            <FeatherIcon type="git-branch" :size="28" />
+          </div>
+          <div class="practice-info">
+            <h3>Phân loại từ</h3>
+            <p>Học 8 loại từ cơ bản (Noun, Verb, Adj...) với quiz AI</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+        </div>
+
+        <div class="practice-card card card-clickable" @click="goToSpeaking">
+          <div class="practice-icon" style="background: linear-gradient(135deg, #0EA5E9, #0284C7);">
+            <FeatherIcon type="mic" :size="28" />
+          </div>
+          <div class="practice-info">
+            <h3>Luyện phát âm AI</h3>
+            <p>Thu âm & nhận phản hồi chuẩn xác ngữ điệu, âm đuôi</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+        </div>
+
+        <div class="practice-card card card-clickable" @click="startSRSReview">
+          <div class="practice-icon srs-icon"
+            style="background: linear-gradient(135deg, #FF6B35, #F7931E); position: relative;">
+            <FeatherIcon type="clock" :size="28" />
+            <span class="notification-badge" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }}</span>
+          </div>
+          <div class="practice-info">
+            <h3>Ôn tập SRS</h3>
+            <p v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }} từ cần ôn tập ngay hôm nay</p>
+            <p v-else>Đã hoàn thành bài ôn tập hôm nay!</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+        </div>
       </div>
     </section>
   </div>
@@ -136,6 +151,10 @@ function goToBook(id) {
 
 function goToWordTypes() {
   router.push('/word-types')
+}
+
+function goToSpeaking() {
+  router.push('/speaking-practice')
 }
 
 function startSRSReview() {
@@ -276,14 +295,29 @@ function startSRSReview() {
   }
 }
 
-/* AI Practice Section */
+/* Sections */
+.books-section,
+.dashboard-section,
 .ai-practice-section {
   margin-bottom: 2.5rem;
 }
 
 .practice-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .practice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .practice-card {
