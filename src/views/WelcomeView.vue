@@ -16,9 +16,9 @@
           và nhiều chế độ luyện tập thú vị.
         </p>
         <div class="hero-actions">
-          <router-link to="/register" class="btn-primary-large">
-            <FeatherIcon type="user-plus" :size="20" />
-            <span>Bắt đầu miễn phí</span>
+          <router-link to="/" class="btn-primary-large">
+            <FeatherIcon type="arrow-right" :size="20" />
+            <span>Vào học ngay (Miễn phí)</span>
           </router-link>
           <router-link to="/login" class="btn-secondary-large">
             <FeatherIcon type="log-in" :size="20" />
