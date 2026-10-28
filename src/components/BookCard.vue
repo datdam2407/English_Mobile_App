@@ -1,7 +1,7 @@
 <template>
-  <div class="book-card card card-clickable" @click="$emit('click')">
+  <div class="book-card card-clickable" @click="$emit('click')">
     <div class="book-icon-wrapper" :class="isOxford ? 'oxford-bg' : 'toeic-bg'">
-      <FeatherIcon :type="isOxford ? 'award' : 'book-open'" :size="24" />
+      <FeatherIcon :type="isOxford ? 'award' : 'book-open'" :size="20" />
     </div>
 
     <div class="book-info">
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <FeatherIcon type="chevron-right" :size="18" class="book-chevron" />
+    <FeatherIcon type="chevron-right" :size="16" class="book-chevron" />
   </div>
 </template>
 
@@ -46,28 +46,30 @@ const isOxford = computed(() => {
 <style scoped>
 .book-card {
   display: flex;
-  gap: 1.1rem;
+  gap: 0.75rem;
   align-items: center;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 1.1rem 1.25rem;
+  padding: 0.85rem 1rem;
   transition: all 0.2s ease;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  min-width: 0;
+  cursor: pointer;
 }
 
 .book-card:hover {
   transform: translateY(-2px);
   border-color: var(--mint-400);
-  box-shadow: 0 4px 14px rgba(21, 183, 158, 0.12);
+  box-shadow: 0 4px 12px rgba(21, 183, 158, 0.12);
 }
 
 .book-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,12 +95,12 @@ const isOxford = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  gap: 0.4rem;
+  margin-bottom: 0.15rem;
 }
 
 .book-name {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0;
@@ -108,11 +110,11 @@ const isOxford = computed(() => {
 }
 
 .book-tag-badge {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: var(--mint-600);
   background: rgba(21, 183, 158, 0.12);
-  padding: 0.15rem 0.5rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 9999px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -120,9 +122,10 @@ const isOxford = computed(() => {
 
 .book-description {
   color: var(--text-muted);
-  font-size: 0.82rem;
-  margin: 0 0 0.35rem 0;
+  font-size: 0.76rem;
+  margin: 0 0 0.2rem 0;
   line-height: 1.35;
+  white-space: normal;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -133,21 +136,21 @@ const isOxford = computed(() => {
 .book-meta {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .meta-sub {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.74rem;
+  gap: 0.25rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
 }
 
 .book-chevron {
   color: var(--text-muted);
   flex-shrink: 0;
-  margin-left: 0.25rem;
+  margin-left: 0.2rem;
   transition: transform 0.2s;
 }
 
@@ -158,22 +161,21 @@ const isOxford = computed(() => {
 
 @media (max-width: 640px) {
   .book-card {
-    gap: 0.85rem;
-    padding: 0.85rem 1rem;
+    padding: 0.7rem 0.8rem;
+    gap: 0.65rem;
   }
 
   .book-icon-wrapper {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
+    width: 38px;
+    height: 38px;
   }
 
   .book-name {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .book-description {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
   }
 }
 </style>

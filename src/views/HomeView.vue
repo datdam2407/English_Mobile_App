@@ -143,7 +143,7 @@
       </div>
     </section>
 
-    <!-- SECTION 2: Sách Từ Vựng (Cohesive layout matching the first section) -->
+    <!-- SECTION 2: Sách Từ Vựng (Unified layout matching the other sections) -->
     <section class="books-section card">
       <div class="today-hero-header books-header-row">
         <div class="today-hero-title-group">
@@ -181,6 +181,72 @@
       </div>
     </section>
 
+    <!-- SECTION 3: Luyện tập với AI (Unified layout matching Section 1 & Section 2) -->
+    <section class="ai-practice-section card">
+      <div class="today-hero-header ai-header-row">
+        <div class="today-hero-title-group">
+          <span class="greeting-badge ai-badge">
+            <FeatherIcon type="cpu" :size="14" /> Trí tuệ nhân tạo
+          </span>
+          <h2 class="today-greeting ai-title">Luyện Tập Với AI</h2>
+        </div>
+        <div class="books-header-actions">
+          <span class="books-count-badge">
+            <FeatherIcon type="activity" :size="13" /> 3 chế độ luyện
+          </span>
+        </div>
+      </div>
+
+      <div class="practice-grid">
+        <!-- Mode 1: Phân loại từ -->
+        <div class="practice-card card-clickable" @click="goToWordTypes">
+          <div class="practice-icon word-type-bg">
+            <FeatherIcon type="git-branch" :size="20" />
+          </div>
+          <div class="practice-info">
+            <div class="card-inner-top">
+              <h3 class="practice-card-title">Phân loại từ</h3>
+              <span class="action-pill accent">8 loại từ</span>
+            </div>
+            <p class="practice-card-desc">Học Danh, Động, Tính từ với quiz AI tương tác</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="16" class="practice-arrow" />
+        </div>
+
+        <!-- Mode 2: Phát âm AI -->
+        <div class="practice-card card-clickable" @click="goToSpeaking">
+          <div class="practice-icon speaking-bg">
+            <FeatherIcon type="mic" :size="20" />
+          </div>
+          <div class="practice-info">
+            <div class="card-inner-top">
+              <h3 class="practice-card-title">Luyện phát âm AI</h3>
+              <span class="action-pill neutral">UK & US</span>
+            </div>
+            <p class="practice-card-desc">Thu âm & chấm điểm ngữ điệu, âm đuôi chuẩn xác</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="16" class="practice-arrow" />
+        </div>
+
+        <!-- Mode 3: Ôn tập SRS -->
+        <div class="practice-card card-clickable" @click="startSRSReview">
+          <div class="practice-icon srs-bg">
+            <FeatherIcon type="clock" :size="20" />
+            <span class="notification-badge" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }}</span>
+          </div>
+          <div class="practice-info">
+            <div class="card-inner-top">
+              <h3 class="practice-card-title">Ôn tập SRS</h3>
+              <span class="action-pill due" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }} từ đến hạn</span>
+              <span class="action-pill clean" v-else>Đã hoàn thành</span>
+            </div>
+            <p class="practice-card-desc">Thuật toán SM-2 nhắc nhở đúng thời điểm vàng</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="16" class="practice-arrow" />
+        </div>
+      </div>
+    </section>
+
     <!-- Mobile PWA App Banner -->
     <div v-if="!isInstalled && (isInstallable || isIOS)" class="mobile-pwa-banner card">
       <div class="banner-icon-col">
@@ -195,52 +261,6 @@
         {{ isIOS ? 'Xem cách cài' : 'Cài đặt' }}
       </button>
     </div>
-
-    <!-- SECTION 3: Luyện tập với AI -->
-    <section class="ai-practice-section">
-      <h2 class="section-title">
-        <FeatherIcon type="cpu" :size="22" /> Luyện Tập Với AI
-      </h2>
-      <div class="practice-grid">
-        <div class="practice-card card card-clickable" @click="goToWordTypes">
-          <div class="practice-icon" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
-            <FeatherIcon type="git-branch" :size="26" />
-          </div>
-          <div class="practice-info">
-            <h3>Phân loại từ</h3>
-            <p>Học 8 loại từ cơ bản (Noun, Verb, Adj...) với quiz AI tương tác</p>
-          </div>
-          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
-        </div>
-
-        <div class="practice-card card card-clickable" @click="goToSpeaking">
-          <div class="practice-icon" style="background: linear-gradient(135deg, #0EA5E9, #0284C7);">
-            <FeatherIcon type="mic" :size="26" />
-          </div>
-          <div class="practice-info">
-            <h3>Luyện phát âm AI</h3>
-            <p>Thu âm & nhận phản hồi chuẩn xác ngữ điệu, âm đuôi Anh-Anh và Anh-Mỹ</p>
-          </div>
-          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
-        </div>
-
-        <div class="practice-card card card-clickable" @click="startSRSReview">
-          <div
-            class="practice-icon srs-icon"
-            style="background: linear-gradient(135deg, #FF6B35, #F7931E); position: relative;"
-          >
-            <FeatherIcon type="clock" :size="26" />
-            <span class="notification-badge" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }}</span>
-          </div>
-          <div class="practice-info">
-            <h3>Ôn tập SRS</h3>
-            <p v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }} từ cần ôn tập ngay hôm nay</p>
-            <p v-else>Đã hoàn thành các từ đến hạn hôm nay!</p>
-          </div>
-          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -313,36 +333,30 @@ function openFlashcardDeck() {
 }
 
 onMounted(async () => {
-  // Check if first-time user
   if (!dictionaryStorage.isOnboarded()) {
     showOnboarding.value = true
   }
 
   try {
-    // Load SRS stats instantly from local progress
     reviewStats.value = getReviewStats()
     userGoal.value = dictionaryStorage.getUserGoal()
 
-    // Load books with cached API
     const fetchedBooks = await getAllBooks()
     books.value = fetchedBooks
 
-    // Topic counts
     const counts = {}
     for (const book of fetchedBooks) {
       counts[book.id] = book.topicCount ?? 0
     }
     topicCounts.value = counts
 
-    // Load sample cards for Flashcard component from Oxford or TOEIC
     try {
       const allWords = await api.getAllWords()
       if (allWords && allWords.length > 0) {
-        // Pick 10 sample words for flashcard deck
         featuredFlashcards.value = allWords.slice(0, 15)
       }
     } catch (e) {
-      console.warn('Could not load words for flashcard, fallback default will be used', e)
+      console.warn('Could not load words for flashcard', e)
     }
   } catch (error) {
     console.error('Error loading home data:', error)
@@ -391,19 +405,32 @@ function startSRSReview() {
   padding-bottom: 2.5rem;
 }
 
-/* SECTION 1: Today Hero Card */
-.today-hero {
+/* ========================================================
+   UNIFIED SECTION CARDS (Section 1, Section 2, Section 3)
+   ======================================================== */
+.today-hero,
+.books-section,
+.ai-practice-section {
   background: linear-gradient(135deg, rgba(21, 183, 158, 0.08) 0%, rgba(14, 147, 132, 0.14) 100%);
   border: 1px solid rgba(21, 183, 158, 0.28);
   border-radius: var(--radius-xl);
   padding: 1.25rem 1.4rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
+.ai-practice-section {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(124, 58, 237, 0.12) 100%);
+  border-color: rgba(139, 92, 246, 0.26);
+}
+
+/* ========================================================
+   UNIFIED SECTION HEADERS
+   ======================================================== */
 .today-hero-header {
   display: flex;
   justify-content: space-between;
@@ -432,8 +459,18 @@ function startSRSReview() {
   margin-bottom: 0.35rem;
 }
 
+.books-badge {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.14);
+}
+
+.ai-badge {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.14);
+}
+
 .today-greeting {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
   margin: 0;
@@ -455,6 +492,23 @@ function startSRSReview() {
   white-space: nowrap;
 }
 
+.books-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+/* ========================================================
+   DAILY GOAL CARD (INSIDE SECTION 1)
+   ======================================================== */
 .daily-goal-box {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
@@ -566,8 +620,11 @@ function startSRSReview() {
   white-space: nowrap;
 }
 
-/* Quick Actions Grid */
-.quick-actions-grid {
+/* ========================================================
+   UNIFIED GRIDS (Section 1, Section 2, Section 3)
+   ======================================================== */
+.quick-actions-grid,
+.practice-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
@@ -576,14 +633,27 @@ function startSRSReview() {
   box-sizing: border-box;
 }
 
-.action-card {
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ========================================================
+   UNIFIED INNER CARDS (ActionCard, BookCard, PracticeCard)
+   ======================================================== */
+.action-card,
+.practice-card {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 0.75rem 0.85rem;
+  padding: 0.85rem 1rem;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -592,13 +662,15 @@ function startSRSReview() {
   cursor: pointer;
 }
 
-.action-card:hover {
+.action-card:hover,
+.practice-card:hover {
   transform: translateY(-2px);
   border-color: var(--mint-400);
   box-shadow: 0 4px 12px rgba(21, 183, 158, 0.12);
 }
 
-.action-card-icon {
+.action-card-icon,
+.practice-icon {
   width: 40px;
   height: 40px;
   border-radius: 11px;
@@ -607,6 +679,7 @@ function startSRSReview() {
   justify-content: center;
   color: white;
   flex-shrink: 0;
+  position: relative;
 }
 
 .review-bg {
@@ -621,24 +694,40 @@ function startSRSReview() {
   background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
-.action-card-body {
+.word-type-bg {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.speaking-bg {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.srs-bg {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.action-card-body,
+.practice-info {
   flex: 1;
   min-width: 0;
   overflow: hidden;
 }
 
-.action-card-header {
+.action-card-header,
+.card-inner-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.4rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
-.action-title {
-  font-size: 0.9rem;
+.action-title,
+.practice-card-title {
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
+  margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -647,7 +736,7 @@ function startSRSReview() {
 .action-pill {
   font-size: 0.68rem;
   font-weight: 700;
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 9999px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -673,7 +762,8 @@ function startSRSReview() {
   color: #475569;
 }
 
-.action-desc {
+.action-desc,
+.practice-card-desc {
   font-size: 0.76rem;
   color: var(--text-muted);
   margin: 0;
@@ -686,74 +776,47 @@ function startSRSReview() {
   text-overflow: ellipsis;
 }
 
-.action-arrow {
+.action-arrow,
+.practice-arrow {
   color: var(--text-muted);
   flex-shrink: 0;
   margin-left: 0.2rem;
+  transition: transform 0.2s;
 }
 
-/* SECTION 2: Sách Từ Vựng (Unified layout matching the first section) */
-.books-section {
-  background: linear-gradient(135deg, rgba(21, 183, 158, 0.08) 0%, rgba(14, 147, 132, 0.14) 100%);
-  border: 1px solid rgba(21, 183, 158, 0.28);
-  border-radius: var(--radius-xl);
-  padding: 1.25rem 1.4rem;
-  margin-bottom: 1.75rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+.action-card:hover .action-arrow,
+.practice-card:hover .practice-arrow {
+  transform: translateX(2px);
+  color: var(--mint-500);
 }
 
-.books-header-row {
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: bold;
+  height: 19px;
+  width: 19px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 1.15rem;
-}
-
-.books-badge {
-  color: #0284c7;
-  background: rgba(2, 132, 199, 0.14);
-}
-
-.books-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--text-primary);
-}
-
-.books-count-badge {
-  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  background: var(--card-bg);
-  padding: 0.3rem 0.65rem;
-  border-radius: 9999px;
-  border: 1px solid var(--border-color);
-  white-space: nowrap;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* Mobile PWA Banner */
+/* ========================================================
+   MOBILE PWA BANNER
+   ======================================================== */
 .mobile-pwa-banner {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   padding: 0.9rem 1.1rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   background: linear-gradient(135deg, rgba(21, 183, 158, 0.12), rgba(14, 147, 132, 0.18));
   border: 1px solid var(--mint-300);
   border-radius: var(--radius-xl);
@@ -762,9 +825,9 @@ function startSRSReview() {
 }
 
 .banner-icon-col {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
   background: var(--mint-500);
   color: white;
   display: flex;
@@ -781,13 +844,13 @@ function startSRSReview() {
 .banner-title {
   display: block;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
   margin-bottom: 0.15rem;
 }
 
 .banner-desc {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   margin: 0;
   line-height: 1.35;
@@ -798,112 +861,10 @@ function startSRSReview() {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.55rem 0.9rem;
-  font-size: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   white-space: nowrap;
-}
-
-/* SECTION 3: AI Practice Section */
-.ai-practice-section {
-  margin-bottom: 2.25rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.practice-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.practice-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.15rem;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(124, 58, 237, 0.08));
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-}
-
-.practice-card:hover {
-  border-color: rgba(139, 92, 246, 0.4);
-  transform: translateY(-2px);
-}
-
-.practice-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  flex-shrink: 0;
-}
-
-.practice-info {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.practice-info h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.2rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.practice-info p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.35;
-}
-
-.practice-arrow {
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
-.notification-badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: #ef4444;
-  color: white;
-  font-size: 0.72rem;
-  font-weight: bold;
-  height: 20px;
-  width: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .loading {
@@ -914,7 +875,7 @@ function startSRSReview() {
 
 .empty-state {
   text-align: center;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 1.25rem;
   background-color: var(--card-bg);
   border-radius: var(--radius-xl);
   border: 2px dashed var(--border-color);
@@ -926,7 +887,9 @@ function startSRSReview() {
   margin-bottom: 1rem;
 }
 
-/* Flashcard Modal */
+/* ========================================================
+   FLASHCARD MODAL
+   ======================================================== */
 .flashcard-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -944,7 +907,7 @@ function startSRSReview() {
   max-width: 580px;
   background: var(--card-bg);
   border-radius: var(--radius-xl);
-  padding: 1.35rem 1.45rem;
+  padding: 1.25rem 1.35rem;
   border: 1px solid var(--border-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
@@ -972,15 +935,15 @@ function startSRSReview() {
 }
 
 .modal-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--text-primary);
   margin: 0;
 }
 
 .btn-close-circle {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1px solid var(--border-color);
   background: var(--card-bg);
@@ -997,7 +960,9 @@ function startSRSReview() {
   border-color: var(--mint-400);
 }
 
-/* Responsive adjustments for Tablets & Mobile */
+/* ========================================================
+   RESPONSIVE ADJUSTMENTS (Tablets & Mobile)
+   ======================================================== */
 @media (max-width: 860px) {
   .quick-actions-grid {
     grid-template-columns: 1fr;
@@ -1014,27 +979,26 @@ function startSRSReview() {
 
 @media (max-width: 640px) {
   .today-hero,
-  .books-section {
-    padding: 1rem 0.9rem;
-    margin-bottom: 1.25rem;
+  .books-section,
+  .ai-practice-section {
+    padding: 0.95rem 0.85rem;
+    margin-bottom: 1.15rem;
     border-radius: var(--radius-lg);
   }
 
-  .today-hero-header,
-  .books-header-row {
+  .today-hero-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.65rem;
+    gap: 0.55rem;
   }
 
-  .today-greeting,
-  .books-title {
-    font-size: 1.25rem;
+  .today-greeting {
+    font-size: 1.2rem;
   }
 
   .daily-goal-box {
-    padding: 0.85rem;
-    margin-bottom: 0.85rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
   }
 
   .goal-footer {
@@ -1046,25 +1010,24 @@ function startSRSReview() {
   .btn-continue {
     width: 100%;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.55rem;
   }
 
-  .action-card {
+  .action-card,
+  .practice-card {
     padding: 0.7rem 0.8rem;
     gap: 0.65rem;
   }
 
-  .action-card-icon {
+  .action-card-icon,
+  .practice-icon {
     width: 38px;
     height: 38px;
   }
 
-  .action-title {
+  .action-title,
+  .practice-card-title {
     font-size: 0.88rem;
-  }
-
-  .section-title {
-    font-size: 1.15rem;
   }
 
   .mobile-pwa-banner {
@@ -1080,7 +1043,7 @@ function startSRSReview() {
   }
 
   .flashcard-modal-box {
-    padding: 1rem;
+    padding: 0.9rem;
   }
 }
 </style>

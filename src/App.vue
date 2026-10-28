@@ -23,17 +23,26 @@ const { isAuthenticated } = useAuth()
 <style>
 .main-content {
   min-height: calc(100vh - 68px);
-  padding: 2rem;
-  max-width: 1320px;
+  padding: 1.75rem 1.25rem;
+  max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .main-content {
     padding: 1rem 0.85rem;
-    /* Extra padding at bottom so content is never obscured by mobile bottom nav or safe area */
     padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
     min-height: calc(100vh - 56px);
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem 0.65rem;
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
   }
 }
 </style>
