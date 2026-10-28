@@ -18,14 +18,14 @@
     <!-- Today's Learning & Daily Goal Hero -->
     <section class="today-hero card">
       <div class="today-hero-header">
-        <div>
+        <div class="today-hero-title-group">
           <span class="greeting-badge">
             <FeatherIcon type="sun" :size="14" /> {{ greetingText }}
           </span>
           <h1 class="today-greeting">Sẵn sàng học tiếng Anh hôm nay?</h1>
         </div>
         <button class="btn btn-ghost btn-sm btn-goal-edit" @click="showOnboarding = true" title="Điều chỉnh mục tiêu">
-          <FeatherIcon type="settings" :size="15" />
+          <FeatherIcon type="settings" :size="14" />
           <span>{{ userGoal.targetName || 'Mục tiêu' }}</span>
         </button>
       </div>
@@ -52,14 +52,14 @@
 
         <div class="goal-footer">
           <p class="goal-message">
-            <FeatherIcon type="star" :size="16" class="text-amber-500" />
+            <FeatherIcon type="star" :size="16" class="text-amber-500 goal-star-icon" />
             <span v-if="goalPercentage >= 100">Xuất sắc! Bạn đã hoàn thành mục tiêu ngày hôm nay! 🎉</span>
             <span v-else-if="goalPercentage > 0">Bạn đang tiến bộ rất tốt, còn {{ remainingWords }} từ nữa thôi!</span>
             <span v-else>Khởi động ngày mới với 5 từ vựng hoặc ôn lại các từ sắp quên nhé.</span>
           </p>
           <button class="btn btn-primary btn-sm btn-continue" @click="continueLearning">
             <span>{{ reviewStats.dueToday > 0 ? 'Ôn tập ngay' : 'Tiếp tục học' }}</span>
-            <FeatherIcon type="arrow-right" :size="16" />
+            <FeatherIcon type="arrow-right" :size="15" />
           </button>
         </div>
       </div>
@@ -69,7 +69,7 @@
         <!-- 1. Ôn tập từ vựng -->
         <div class="action-card card-clickable" @click="startSRSReview">
           <div class="action-card-icon review-bg">
-            <FeatherIcon type="repeat" :size="22" />
+            <FeatherIcon type="repeat" :size="20" />
           </div>
           <div class="action-card-body">
             <div class="action-card-header">
@@ -83,13 +83,13 @@
             </div>
             <p class="action-desc">Lặp lại ngắt quãng (SM-2) chống quên từ</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="18" class="action-arrow" />
+          <FeatherIcon type="chevron-right" :size="16" class="action-arrow" />
         </div>
 
         <!-- 2. Học từ mới -->
         <div class="action-card card-clickable" @click="goToLearnNewWords">
           <div class="action-card-icon learn-bg">
-            <FeatherIcon type="book-open" :size="22" />
+            <FeatherIcon type="book-open" :size="20" />
           </div>
           <div class="action-card-body">
             <div class="action-card-header">
@@ -98,13 +98,13 @@
             </div>
             <p class="action-desc">Oxford 3000 & 600 từ TOEIC thiết yếu</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="18" class="action-arrow" />
+          <FeatherIcon type="chevron-right" :size="16" class="action-arrow" />
         </div>
 
         <!-- 3. Tra cứu nhanh -->
         <div class="action-card card-clickable" @click="goToDictionary">
           <div class="action-card-icon dict-bg">
-            <FeatherIcon type="search" :size="22" />
+            <FeatherIcon type="search" :size="20" />
           </div>
           <div class="action-card-body">
             <div class="action-card-header">
@@ -113,7 +113,7 @@
             </div>
             <p class="action-desc">Tra nghĩa, IPA, ví dụ và phát âm chuẩn</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="18" class="action-arrow" />
+          <FeatherIcon type="chevron-right" :size="16" class="action-arrow" />
         </div>
       </div>
     </section>
@@ -121,14 +121,14 @@
     <!-- Mobile PWA App Banner -->
     <div v-if="!isInstalled && (isInstallable || isIOS)" class="mobile-pwa-banner card">
       <div class="banner-icon-col">
-        <FeatherIcon type="smartphone" :size="28" />
+        <FeatherIcon type="smartphone" :size="26" />
       </div>
       <div class="banner-text-col">
         <span class="banner-title">Cài đặt EngLearn Mobile App</span>
         <p class="banner-desc">Thêm ứng dụng vào màn hình chính để học tiếng Anh toàn màn hình mượt mà và tiện lợi.</p>
       </div>
       <button class="btn btn-primary btn-sm btn-install-now" @click="handleInstallClick">
-        <FeatherIcon :type="isIOS ? 'info' : 'download'" :size="16" />
+        <FeatherIcon :type="isIOS ? 'info' : 'download'" :size="15" />
         {{ isIOS ? 'Xem cách cài' : 'Cài đặt' }}
       </button>
     </div>
@@ -137,7 +137,7 @@
     <section class="books-section">
       <div class="section-header-row">
         <h2 class="section-title">
-          <FeatherIcon type="book" :size="24" /> Sách Từ Vựng
+          <FeatherIcon type="book" :size="22" /> Sách Từ Vựng
         </h2>
         <span class="books-count-badge" v-if="books.length > 0">{{ books.length }} bộ sách</span>
       </div>
@@ -164,45 +164,32 @@
       </div>
     </section>
 
-    <!-- 2. Học từ mới & Tiến trình học -->
-    <section class="dashboard-section">
-      <div class="section-header-row">
-        <h2 class="section-title">
-          <FeatherIcon type="trending-up" :size="24" /> Học Từ Mới & Tiến Trình
-        </h2>
-        <router-link to="/progress" class="view-more-link">
-          Chi tiết <FeatherIcon type="arrow-right" :size="14" />
-        </router-link>
-      </div>
-      <DashboardWidget ref="dashboardRef" />
-    </section>
-
-    <!-- 3. Luyện tập với AI -->
+    <!-- 2. Luyện tập với AI -->
     <section class="ai-practice-section">
       <h2 class="section-title">
-        <FeatherIcon type="cpu" :size="24" /> Luyện Tập Với AI
+        <FeatherIcon type="cpu" :size="22" /> Luyện Tập Với AI
       </h2>
       <div class="practice-grid">
         <div class="practice-card card card-clickable" @click="goToWordTypes">
           <div class="practice-icon" style="background: linear-gradient(135deg, #8B5CF6, #7C3AED);">
-            <FeatherIcon type="git-branch" :size="28" />
+            <FeatherIcon type="git-branch" :size="26" />
           </div>
           <div class="practice-info">
             <h3>Phân loại từ</h3>
             <p>Học 8 loại từ cơ bản (Noun, Verb, Adj...) với quiz AI tương tác</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
         </div>
 
         <div class="practice-card card card-clickable" @click="goToSpeaking">
           <div class="practice-icon" style="background: linear-gradient(135deg, #0EA5E9, #0284C7);">
-            <FeatherIcon type="mic" :size="28" />
+            <FeatherIcon type="mic" :size="26" />
           </div>
           <div class="practice-info">
             <h3>Luyện phát âm AI</h3>
             <p>Thu âm & nhận phản hồi chuẩn xác ngữ điệu, âm đuôi Anh-Anh và Anh-Mỹ</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
         </div>
 
         <div class="practice-card card card-clickable" @click="startSRSReview">
@@ -210,7 +197,7 @@
             class="practice-icon srs-icon"
             style="background: linear-gradient(135deg, #FF6B35, #F7931E); position: relative;"
           >
-            <FeatherIcon type="clock" :size="28" />
+            <FeatherIcon type="clock" :size="26" />
             <span class="notification-badge" v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }}</span>
           </div>
           <div class="practice-info">
@@ -218,7 +205,7 @@
             <p v-if="reviewStats.dueToday > 0">{{ reviewStats.dueToday }} từ cần ôn tập ngay hôm nay</p>
             <p v-else>Đã hoàn thành các từ đến hạn hôm nay!</p>
           </div>
-          <FeatherIcon type="chevron-right" :size="20" class="practice-arrow" />
+          <FeatherIcon type="chevron-right" :size="18" class="practice-arrow" />
         </div>
       </div>
     </section>
@@ -230,7 +217,6 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import BookCard from '../components/BookCard.vue'
 import FeatherIcon from '../components/FeatherIcon.vue'
-import DashboardWidget from '../components/DashboardWidget.vue'
 import OnboardingModal from '../components/OnboardingModal.vue'
 import WordDetailModal from '../components/WordDetailModal.vue'
 import { getAllBooks } from '../db/database.js'
@@ -244,7 +230,6 @@ const { isInstallable, isInstalled, isIOS, install } = usePWAInstall()
 const books = ref([])
 const topicCounts = ref({})
 const loading = ref(true)
-const dashboardRef = ref(null)
 const reviewStats = ref({ dueToday: 0, reviewedToday: 0, newToday: 0 })
 const showOnboarding = ref(false)
 const userGoal = ref(dictionaryStorage.getUserGoal())
@@ -356,6 +341,10 @@ function startSRSReview() {
 
 <style scoped>
 .home-view {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
   padding-bottom: 2.5rem;
 }
 
@@ -364,111 +353,133 @@ function startSRSReview() {
   background: linear-gradient(135deg, rgba(21, 183, 158, 0.08) 0%, rgba(14, 147, 132, 0.14) 100%);
   border: 1px solid rgba(21, 183, 158, 0.28);
   border-radius: var(--radius-xl);
-  padding: 1.5rem;
+  padding: 1.25rem 1.4rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .today-hero-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.25rem;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.today-hero-title-group {
+  min-width: 0;
+  flex: 1;
 }
 
 .greeting-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
+  gap: 0.35rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--mint-600);
   background: rgba(21, 183, 158, 0.15);
-  padding: 0.25rem 0.65rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 9999px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .today-greeting {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--text-primary);
   margin: 0;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .btn-goal-edit {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.82rem;
+  gap: 0.35rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   border: 1px solid var(--border-color);
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 0.65rem;
   border-radius: 9999px;
   background: var(--card-bg);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .daily-goal-box {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
-  padding: 1.25rem;
+  padding: 1.1rem 1.2rem;
   border: 1px solid var(--border-color);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .goal-info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .goal-label {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .goal-title {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--text-muted);
 }
 
 .goal-tag {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--mint-600);
   background: rgba(21, 183, 158, 0.12);
-  padding: 0.15rem 0.5rem;
+  padding: 0.12rem 0.45rem;
   border-radius: 9999px;
+  white-space: nowrap;
 }
 
 .goal-counter {
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .goal-current {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--mint-600);
 }
 
 .goal-target {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   margin-left: 0.2rem;
 }
 
 .goal-progress-bar {
   width: 100%;
-  height: 10px;
+  height: 8px;
   background: var(--border-color);
   border-radius: 9999px;
   overflow: hidden;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .goal-progress-fill {
@@ -482,43 +493,60 @@ function startSRSReview() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .goal-message {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.88rem;
+  gap: 0.45rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
   margin: 0;
+  line-height: 1.35;
+  min-width: 0;
+  flex: 1;
+}
+
+.goal-star-icon {
+  flex-shrink: 0;
 }
 
 .btn-continue {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1.1rem;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
-/* Quick Actions Grid */
+/* Quick Actions Grid (Selectors 1, 2, 3) */
 .quick-actions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .action-card {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.85rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .action-card:hover {
@@ -528,9 +556,9 @@ function startSRSReview() {
 }
 
 .action-card-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,27 +581,33 @@ function startSRSReview() {
 .action-card-body {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .action-card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  gap: 0.4rem;
   margin-bottom: 0.2rem;
-  flex-wrap: wrap;
 }
 
 .action-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .action-pill {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 0.1rem 0.45rem;
+  padding: 0.1rem 0.4rem;
   border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .action-pill.due {
@@ -597,10 +631,14 @@ function startSRSReview() {
 }
 
 .action-desc {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   margin: 0;
-  white-space: nowrap;
+  line-height: 1.35;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -608,24 +646,27 @@ function startSRSReview() {
 .action-arrow {
   color: var(--text-muted);
   flex-shrink: 0;
+  margin-left: 0.2rem;
 }
 
 /* Mobile PWA Banner */
 .mobile-pwa-banner {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: 0.85rem;
+  padding: 0.9rem 1.1rem;
   margin-bottom: 1.75rem;
   background: linear-gradient(135deg, rgba(21, 183, 158, 0.12), rgba(14, 147, 132, 0.18));
   border: 1px solid var(--mint-300);
   border-radius: var(--radius-xl);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .banner-icon-col {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: var(--mint-500);
   color: white;
   display: flex;
@@ -636,29 +677,33 @@ function startSRSReview() {
 
 .banner-text-col {
   flex: 1;
+  min-width: 0;
 }
 
 .banner-title {
   display: block;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .banner-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin: 0;
+  line-height: 1.35;
 }
 
 .btn-install-now {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1rem;
+  gap: 0.35rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 /* Section Common */
@@ -666,11 +711,12 @@ function startSRSReview() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
+  gap: 0.5rem;
 }
 
 .section-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-primary);
   display: flex;
@@ -680,33 +726,22 @@ function startSRSReview() {
 }
 
 .books-count-badge {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-muted);
   background: var(--card-bg);
-  padding: 0.25rem 0.65rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 9999px;
   border: 1px solid var(--border-color);
-}
-
-.view-more-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--mint-600);
-  text-decoration: none;
-}
-
-.view-more-link:hover {
-  text-decoration: underline;
+  white-space: nowrap;
 }
 
 .books-section,
-.dashboard-section,
 .ai-practice-section {
   margin-bottom: 2.25rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .loading {
@@ -717,10 +752,11 @@ function startSRSReview() {
 
 .empty-state {
   text-align: center;
-  padding: 3rem;
+  padding: 2.5rem 1.5rem;
   background-color: var(--card-bg);
   border-radius: var(--radius-xl);
   border: 2px dashed var(--border-color);
+  box-sizing: border-box;
 }
 
 .empty-state p {
@@ -732,16 +768,23 @@ function startSRSReview() {
 .practice-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .practice-card {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
-  padding: 1.15rem 1.35rem;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
   border: 1px solid rgba(139, 92, 246, 0.2);
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(124, 58, 237, 0.08));
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .practice-card:hover {
@@ -750,9 +793,9 @@ function startSRSReview() {
 }
 
 .practice-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -762,36 +805,42 @@ function startSRSReview() {
 
 .practice-info {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .practice-info h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .practice-info p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .practice-arrow {
   color: var(--text-muted);
+  flex-shrink: 0;
 }
 
 .notification-badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -6px;
+  right: -6px;
   background-color: #ef4444;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: bold;
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -800,8 +849,8 @@ function startSRSReview() {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
+/* Responsive adjustments for Tablets & Mobile */
+@media (max-width: 860px) {
   .quick-actions-grid {
     grid-template-columns: 1fr;
   }
@@ -813,34 +862,61 @@ function startSRSReview() {
 
 @media (max-width: 640px) {
   .today-hero {
-    padding: 1.1rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem 0.9rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-lg);
   }
 
   .today-hero-header {
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: flex-start;
+    gap: 0.65rem;
   }
 
   .today-greeting {
     font-size: 1.25rem;
   }
 
+  .daily-goal-box {
+    padding: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+
   .goal-footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 0.65rem;
   }
 
   .btn-continue {
     width: 100%;
     justify-content: center;
+    padding: 0.6rem;
+  }
+
+  .action-card {
+    padding: 0.7rem 0.8rem;
+    gap: 0.65rem;
+  }
+
+  .action-card-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .action-title {
+    font-size: 0.88rem;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
   }
 
   .mobile-pwa-banner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem;
+    gap: 0.65rem;
+    padding: 0.85rem;
   }
 
   .mobile-pwa-banner .btn-install-now {
