@@ -52,7 +52,7 @@
 
         <div class="goal-footer">
           <p class="goal-message">
-            <FeatherIcon type="sparkles" :size="16" class="text-amber-500" />
+            <FeatherIcon type="star" :size="16" class="text-amber-500" />
             <span v-if="goalPercentage >= 100">Xuất sắc! Bạn đã hoàn thành mục tiêu ngày hôm nay! 🎉</span>
             <span v-else-if="goalPercentage > 0">Bạn đang tiến bộ rất tốt, còn {{ remainingWords }} từ nữa thôi!</span>
             <span v-else>Khởi động ngày mới với 5 từ vựng hoặc ôn lại các từ sắp quên nhé.</span>
