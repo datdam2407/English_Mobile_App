@@ -1,0 +1,6 @@
+{
+  "name": "EngLearn",
+  "description": "EngLearn - Ứng dụng học tiếng Anh hiệu quả với Flash Cards, Quiz, Spaced Repetition (SRS), bài học ngữ pháp và trợ lý luyện phát âm AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,144 @@
+import { createRouter, createWebHistory } from 'vue-router'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/HomeView.vue')
+  },
+  {
+    path: '/welcome',
+    name: 'Welcome',
+    component: () => import('../views/WelcomeView.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/LoginView.vue'),
+    meta: { guestOnly: true }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/RegisterView.vue'),
+    meta: { guestOnly: true }
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/ProfileView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/book/:id',
+    name: 'Book',
+    component: () => import('../views/BookView.vue')
+  },
+  {
+    path: '/topic/:id',
+    name: 'Topic',
+    component: () => import('../views/TopicView.vue')
+  },
+  {
+    path: '/learn/:topicId',
+    name: 'Learn',
+    component: () => import('../views/LearnView.vue')
+  },
+  {
+    path: '/flashcard/:topicId',
+    name: 'FlashCard',
+    component: () => import('../views/FlashCardView.vue')
+  },
+  {
+    path: '/quiz/:topicId/:mode',
+    name: 'Quiz',
+    component: () => import('../views/QuizView.vue')
+  },
+  {
+    path: '/result',
+    name: 'Result',
+    component: () => import('../views/ResultView.vue')
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/AdminView.vue'),
+    meta: { requiresAdmin: true }
+  },
+  {
+    path: '/paragraph/:topicId',
+    name: 'Paragraph',
+    component: () => import('../views/ParagraphPracticeView.vue')
+  },
+  {
+    path: '/review',
+    name: 'Review',
+    component: () => import('../views/ReviewView.vue')
+  },
+  {
+    path: '/review/:topicId',
+    name: 'ReviewTopic',
+    component: () => import('../views/ReviewView.vue')
+  },
+  {
+    path: '/word-types',
+    name: 'WordTypes',
+    component: () => import('../views/WordTypePracticeView.vue')
+  },
+  {
+    path: '/my-decks',
+    name: 'MyDecks',
+    component: () => import('../views/MyDecksView.vue')
+  },
+  {
+    path: '/speaking-practice',
+    name: 'SpeakingPractice',
+    component: () => import('../views/SpeakingPracticeView.vue')
+  },
+  {
+    path: '/grammar',
+    name: 'Grammar',
+    component: () => import('../views/GrammarView.vue')
+  },
+  {
+    path: '/grammar/:tense',
+    name: 'GrammarDetail',
+    component: () => import('../views/GrammarDetailView.vue')
+  }
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+// Navigation guards
+router.beforeEach((to, from, next) => {
+  const accessToken = localStorage.getItem('englearn_access_token')
+  const userStr = localStorage.getItem('englearn_user')
+  const user = userStr ? JSON.parse(userStr) : null
+  const isAuthenticated = !!accessToken && !!user
+  const isAdmin = user?.role === 'ADMIN'
+
+  // Guest only pages (login, register)
+  if (to.meta.guestOnly && isAuthenticated) {
+    next('/')
+    return
+  }
+
+  // Auth required pages
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/login')
+    return
+  }
+
+  // Admin required pages
+  if (to.meta.requiresAdmin && !isAdmin) {
+    next('/')
+    return
+  }
+
+  next()
+})
+
+export default router
