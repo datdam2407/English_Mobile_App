@@ -192,7 +192,7 @@
         </div>
         <div class="books-header-actions">
           <span class="books-count-badge">
-            <FeatherIcon type="activity" :size="13" /> 3 chế độ luyện
+            <FeatherIcon type="activity" :size="13" /> 4 chế độ luyện
           </span>
         </div>
       </div>
@@ -241,6 +241,21 @@
               <span class="action-pill clean" v-else>Đã hoàn thành</span>
             </div>
             <p class="practice-card-desc">Thuật toán SM-2 nhắc nhở đúng thời điểm vàng</p>
+          </div>
+          <FeatherIcon type="chevron-right" :size="16" class="practice-arrow" />
+        </div>
+
+        <!-- Mode 4: Quiz Ngữ pháp -->
+        <div class="practice-card card-clickable" @click="goToGrammarQuiz">
+          <div class="practice-icon grammar-bg">
+            <FeatherIcon type="check-circle" :size="20" />
+          </div>
+          <div class="practice-info">
+            <div class="card-inner-top">
+              <h3 class="practice-card-title">Quiz ngữ pháp</h3>
+              <span class="action-pill accent">Phản hồi ngay</span>
+            </div>
+            <p class="practice-card-desc">Cấu trúc If, bị động, mệnh đề quan hệ & giải thích</p>
           </div>
           <FeatherIcon type="chevron-right" :size="16" class="practice-arrow" />
         </div>
@@ -393,6 +408,10 @@ function goToSpeaking() {
 
 function startSRSReview() {
   router.push('/review')
+}
+
+function goToGrammarQuiz() {
+  router.push('/grammar-quiz')
 }
 </script>
 
@@ -623,10 +642,18 @@ function startSRSReview() {
 /* ========================================================
    UNIFIED GRIDS (Section 1, Section 2, Section 3)
    ======================================================== */
-.quick-actions-grid,
-.practice-grid {
+.quick-actions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
   width: 100%;
   max-width: 100%;
@@ -704,6 +731,10 @@ function startSRSReview() {
 
 .srs-bg {
   background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.grammar-bg {
+  background: linear-gradient(135deg, #10b981, #059669);
 }
 
 .action-card-body,

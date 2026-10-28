@@ -101,6 +101,11 @@ const routes = [
     component: () => import('../views/GrammarView.vue')
   },
   {
+    path: '/grammar-quiz',
+    name: 'GrammarQuiz',
+    component: () => import('../views/GrammarQuizView.vue')
+  },
+  {
     path: '/grammar/:tense',
     name: 'GrammarDetail',
     component: () => import('../views/GrammarDetailView.vue')

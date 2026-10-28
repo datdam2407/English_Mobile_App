@@ -8,6 +8,13 @@
                 Master English grammar with AI-powered lessons. Select a tense below to start learning theory, examples,
                 and practice exercises.
             </p>
+            <div class="quiz-cta-row">
+                <router-link to="/grammar-quiz" class="btn btn-primary btn-quiz-cta">
+                    <FeatherIcon type="check-circle" :size="18" />
+                    <span>Luyện Trắc Nghiệm Cấu Trúc Ngữ Pháp Ngay</span>
+                    <FeatherIcon type="arrow-right" :size="16" />
+                </router-link>
+            </div>
         </div>
 
         <!-- Tense Groups -->
@@ -122,7 +129,28 @@ const goToLesson = (tense) => {
     color: var(--text-muted);
     font-size: 1.125rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 1.25rem;
+}
+
+.quiz-cta-row {
+    margin-bottom: 2rem;
+}
+
+.btn-quiz-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+}
+
+.btn-quiz-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
 }
 
 /* Grid Layout */
