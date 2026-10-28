@@ -1,0 +1,1513 @@
+[
+  {
+    "name": "Everyday Basics & Communication",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Accept",
+        "vietnamese": "Chấp nhận, đồng ý",
+        "meaning": "v. to agree to take something or to say yes to an offer",
+        "wordForms": "acceptance (n), acceptable (adj)",
+        "pronunciation": "/ək'sept/"
+      },
+      {
+        "english": "Achieve",
+        "vietnamese": "Đạt được, giành được",
+        "meaning": "v. to successfully reach a goal through effort and skill",
+        "wordForms": "achievement (n), achievable (adj)",
+        "pronunciation": "/ə'tʃi:v/"
+      },
+      {
+        "english": "Advise",
+        "vietnamese": "Khuyên bảo, hướng dẫn",
+        "meaning": "v. to give someone useful suggestions about what to do",
+        "wordForms": "advice (n), adviser (n)",
+        "pronunciation": "/əd'vaiz/"
+      },
+      {
+        "english": "Apologize",
+        "vietnamese": "Xin lỗi, tạ lỗi",
+        "meaning": "v. to express regret for something that has caused inconvenience or hurt",
+        "wordForms": "apology (n), apologetic (adj)",
+        "pronunciation": "/ə'pɒlədʒaiz/"
+      },
+      {
+        "english": "Appreciate",
+        "vietnamese": "Trân trọng, cảm kích",
+        "meaning": "v. to recognize the full worth or value of something or someone",
+        "wordForms": "appreciation (n), appreciative (adj)",
+        "pronunciation": "/ə'pri:ʃieit/"
+      },
+      {
+        "english": "Approve",
+        "vietnamese": "Tán thành, phê duyệt",
+        "meaning": "v. to officially agree to or accept a decision or proposal",
+        "wordForms": "approval (n), approved (adj)",
+        "pronunciation": "/ə'pru:v/"
+      },
+      {
+        "english": "Arrange",
+        "vietnamese": "Sắp xếp, thu xếp",
+        "meaning": "v. to organize the details of an event or place things neatly",
+        "wordForms": "arrangement (n)",
+        "pronunciation": "/ə'reindʒ/"
+      },
+      {
+        "english": "Behave",
+        "vietnamese": "Hành xử, cư xử",
+        "meaning": "v. to act or conduct oneself in a particular or polite manner",
+        "wordForms": "behavior (n), behavioral (adj)",
+        "pronunciation": "/bi'heiv/"
+      },
+      {
+        "english": "Confirm",
+        "vietnamese": "Xác nhận, khẳng định",
+        "meaning": "v. to state or show that something is definitely true or correct",
+        "wordForms": "confirmation (n), confirmed (adj)",
+        "pronunciation": "/kən'fɜ:m/"
+      },
+      {
+        "english": "Convince",
+        "vietnamese": "Thuyết phục",
+        "meaning": "v. to make someone believe or agree that something is true",
+        "wordForms": "conviction (n), convincing (adj)",
+        "pronunciation": "/kən'vins/"
+      },
+      {
+        "english": "Encourage",
+        "vietnamese": "Khuyến khích, động viên",
+        "meaning": "v. to give support, confidence, or hope to someone",
+        "wordForms": "encouragement (n), encouraging (adj)",
+        "pronunciation": "/in'kʌridʒ/"
+      },
+      {
+        "english": "Hesitate",
+        "vietnamese": "Do dự, ngập ngừng",
+        "meaning": "v. to pause before saying or doing something because of uncertainty",
+        "wordForms": "hesitation (n), hesitant (adj)",
+        "pronunciation": "/'heziteit/"
+      },
+      {
+        "english": "Remind",
+        "vietnamese": "Nhắc nhở",
+        "meaning": "v. to cause someone to remember someone or something",
+        "wordForms": "reminder (n)",
+        "pronunciation": "/ri'maind/"
+      },
+      {
+        "english": "Suggest",
+        "vietnamese": "Gợi ý, đề xuất",
+        "meaning": "v. to put forward an idea or plan for consideration",
+        "wordForms": "suggestion (n), suggestive (adj)",
+        "pronunciation": "/sə'dʒest/"
+      }
+    ]
+  },
+  {
+    "name": "People, Family & Relationships",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Acquaintance",
+        "vietnamese": "Người quen",
+        "meaning": "n. a person one knows slightly, but who is not a close friend",
+        "wordForms": "acquaint (v)",
+        "pronunciation": "/ə'kweintəns/"
+      },
+      {
+        "english": "Ancestor",
+        "vietnamese": "Tổ tiên, ông bà",
+        "meaning": "n. a person from whom one is descended in family history",
+        "wordForms": "ancestral (adj)",
+        "pronunciation": "/'ænsestə/"
+      },
+      {
+        "english": "Cherish",
+        "vietnamese": "Yêu thương, nâng niu",
+        "meaning": "v. to protect and care for someone lovingly; hold dear",
+        "wordForms": "cherished (adj)",
+        "pronunciation": "/'tʃeriʃ/"
+      },
+      {
+        "english": "Childhood",
+        "vietnamese": "Thời thơ ấu, tuổi thơ",
+        "meaning": "n. the state or period of being a child",
+        "wordForms": "child (n), childish (adj)",
+        "pronunciation": "/'tʃaildhʊd/"
+      },
+      {
+        "english": "Colleague",
+        "vietnamese": "Đồng nghiệp",
+        "meaning": "n. a person with whom one works in a profession or business",
+        "wordForms": "",
+        "pronunciation": "/'kɒli:g/"
+      },
+      {
+        "english": "Companion",
+        "vietnamese": "Bạn đồng hành",
+        "meaning": "n. a person or animal with whom one spends a lot of time",
+        "wordForms": "companionship (n)",
+        "pronunciation": "/kəm'pæniən/"
+      },
+      {
+        "english": "Crowd",
+        "vietnamese": "Đám đông",
+        "meaning": "n. a large number of people gathered together",
+        "wordForms": "crowded (adj)",
+        "pronunciation": "/kraud/"
+      },
+      {
+        "english": "Elderly",
+        "vietnamese": "Cao tuổi, lớn tuổi",
+        "meaning": "adj. of people: rather old; past middle age",
+        "wordForms": "elder (adj, n)",
+        "pronunciation": "/'eldəli/"
+      },
+      {
+        "english": "Generation",
+        "vietnamese": "Thế hệ",
+        "meaning": "n. all of the people born and living at about the same time",
+        "wordForms": "generational (adj)",
+        "pronunciation": "/,dʒenə'reiʃn/"
+      },
+      {
+        "english": "Marriage",
+        "vietnamese": "Hôn nhân",
+        "meaning": "n. the legally or formally recognized union of two people as partners",
+        "wordForms": "marry (v), married (adj)",
+        "pronunciation": "/'mæridʒ/"
+      },
+      {
+        "english": "Neighbor",
+        "vietnamese": "Người hàng xóm",
+        "meaning": "n. a person living near or next door to the speaker or person referred to",
+        "wordForms": "neighborhood (n)",
+        "pronunciation": "/'neibə/"
+      },
+      {
+        "english": "Relative",
+        "vietnamese": "Bà con, họ hàng",
+        "meaning": "n. a person connected by blood or marriage",
+        "wordForms": "relation (n), relationship (n)",
+        "pronunciation": "/'relətiv/"
+      },
+      {
+        "english": "Sibling",
+        "vietnamese": "Anh chị em ruột",
+        "meaning": "n. each of two or more children having one or both parents in common",
+        "wordForms": "",
+        "pronunciation": "/'sibliŋ/"
+      }
+    ]
+  },
+  {
+    "name": "Home, Housing & Living",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Accommodation",
+        "vietnamese": "Chỗ ở, nơi lưu trú",
+        "meaning": "n. a room, group of rooms, or building in which someone may live or stay",
+        "wordForms": "accommodate (v)",
+        "pronunciation": "/ə,kɒmə'deiʃn/"
+      },
+      {
+        "english": "Appliance",
+        "vietnamese": "Thiết bị, đồ gia dụng",
+        "meaning": "n. a device or piece of equipment designed to perform a specific household task",
+        "wordForms": "apply (v)",
+        "pronunciation": "/ə'plaiəns/"
+      },
+      {
+        "english": "Balcony",
+        "vietnamese": "Ban công",
+        "meaning": "n. a platform enclosed by a wall on the outside of a building",
+        "wordForms": "",
+        "pronunciation": "/'bælkəni/"
+      },
+      {
+        "english": "Basement",
+        "vietnamese": "Tầng hầm",
+        "meaning": "n. the floor of a building that is partly or entirely below ground level",
+        "wordForms": "",
+        "pronunciation": "/'beismənt/"
+      },
+      {
+        "english": "Curtain",
+        "vietnamese": "Rèm cửa",
+        "meaning": "n. a piece of cloth that can be drawn across a window or opening",
+        "wordForms": "",
+        "pronunciation": "/'kɜ:tn/"
+      },
+      {
+        "english": "Decorate",
+        "vietnamese": "Trang trí",
+        "meaning": "v. to make something look more attractive by adding ornaments or color",
+        "wordForms": "decoration (n), decorative (adj)",
+        "pronunciation": "/'dekəreit/"
+      },
+      {
+        "english": "Domestic",
+        "vietnamese": "Thuộc về gia đình, trong nhà",
+        "meaning": "adj. relating to the running of a home or to family relations",
+        "wordForms": "domesticate (v)",
+        "pronunciation": "/də'mestik/"
+      },
+      {
+        "english": "Furniture",
+        "vietnamese": "Đồ nội thất, đồ đạc",
+        "meaning": "n. large movable equipment, such as tables and chairs, used to make a room suitable for living",
+        "wordForms": "furnish (v)",
+        "pronunciation": "/'fɜ:nitʃə/"
+      },
+      {
+        "english": "Inhabitant",
+        "vietnamese": "Cư dân, người cư ngụ",
+        "meaning": "n. a person or animal that lives in or occupies a place",
+        "wordForms": "inhabit (v)",
+        "pronunciation": "/in'hæbitənt/"
+      },
+      {
+        "english": "Landlord",
+        "vietnamese": "Chủ nhà, chủ cho thuê",
+        "meaning": "n. a person who rents land, a building, or an apartment to a tenant",
+        "wordForms": "",
+        "pronunciation": "/'lændlɔ:d/"
+      },
+      {
+        "english": "Neighborhood",
+        "vietnamese": "Khu vực lân cận, xóm giềng",
+        "meaning": "n. a district, especially one forming a community within a town or city",
+        "wordForms": "neighbor (n)",
+        "pronunciation": "/'neibəhʊd/"
+      },
+      {
+        "english": "Renovate",
+        "vietnamese": "Cải tạo, nâng cấp",
+        "meaning": "v. to restore something old to a good state of repair",
+        "wordForms": "renovation (n)",
+        "pronunciation": "/'renəveit/"
+      },
+      {
+        "english": "Tenant",
+        "vietnamese": "Người thuê nhà",
+        "meaning": "n. a person who occupies land or property rented from a landlord",
+        "wordForms": "tenancy (n)",
+        "pronunciation": "/'tenənt/"
+      }
+    ]
+  },
+  {
+    "name": "Food, Cooking & Dining",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Appetite",
+        "vietnamese": "Sự ngon miệng, cảm giác thèm ăn",
+        "meaning": "n. a natural desire to satisfy a bodily need, especially for food",
+        "wordForms": "appetizer (n), appetizing (adj)",
+        "pronunciation": "/'æpitait/"
+      },
+      {
+        "english": "Banquet",
+        "vietnamese": "Bữa tiệc lớn, yến tiệc",
+        "meaning": "n. an elaborate and formal meal for many people",
+        "wordForms": "",
+        "pronunciation": "/'bæŋkwit/"
+      },
+      {
+        "english": "Beverage",
+        "vietnamese": "Đồ uống, thức uống",
+        "meaning": "n. a drink other than plain water",
+        "wordForms": "",
+        "pronunciation": "/'bevəridʒ/"
+      },
+      {
+        "english": "Cuisine",
+        "vietnamese": "Ẩm thực, phong cách nấu ăn",
+        "meaning": "n. a style or method of cooking, especially as characteristic of a particular country or region",
+        "wordForms": "",
+        "pronunciation": "/kwi'zi:n/"
+      },
+      {
+        "english": "Delicious",
+        "vietnamese": "Thơm ngon, đậm đà",
+        "meaning": "adj. highly pleasant to the taste",
+        "wordForms": "deliciously (adv)",
+        "pronunciation": "/di'liʃəs/"
+      },
+      {
+        "english": "Dessert",
+        "vietnamese": "Món tráng miệng",
+        "meaning": "n. the sweet course eaten at the end of a meal",
+        "wordForms": "",
+        "pronunciation": "/di'zɜ:t/"
+      },
+      {
+        "english": "Digestion",
+        "vietnamese": "Sự tiêu hóa",
+        "meaning": "n. the process of breaking down food by mechanical and enzymatic action",
+        "wordForms": "digest (v), digestive (adj)",
+        "pronunciation": "/dai'dʒestʃən/"
+      },
+      {
+        "english": "Flavor",
+        "vietnamese": "Hương vị",
+        "meaning": "n. the distinctive taste of a food or drink",
+        "wordForms": "flavorful (adj), flavored (adj)",
+        "pronunciation": "/'fleivə/"
+      },
+      {
+        "english": "Ingredient",
+        "vietnamese": "Nguyên liệu, thành phần",
+        "meaning": "n. any of the foods or substances that are combined to make a particular dish",
+        "wordForms": "",
+        "pronunciation": "/in'gri:diənt/"
+      },
+      {
+        "english": "Nutrition",
+        "vietnamese": "Dinh dưỡng",
+        "meaning": "n. the process of providing or obtaining the food necessary for health and growth",
+        "wordForms": "nutritious (adj), nutrient (n)",
+        "pronunciation": "/nju:'triʃn/"
+      },
+      {
+        "english": "Organic",
+        "vietnamese": "Hữu cơ, tự nhiên",
+        "meaning": "adj. produced or involving production without the use of chemical fertilizers",
+        "wordForms": "organically (adv)",
+        "pronunciation": "/ɔ:'gænik/"
+      },
+      {
+        "english": "Recipe",
+        "vietnamese": "Công thức nấu ăn",
+        "meaning": "n. a set of instructions for preparing a particular dish, including a list of the ingredients required",
+        "wordForms": "",
+        "pronunciation": "/'resəpi/"
+      },
+      {
+        "english": "Vegetarian",
+        "vietnamese": "Người ăn chay, đồ chay",
+        "meaning": "n. a person who does not eat meat or fish; adj. relating to a meat-free diet",
+        "wordForms": "vegetable (n)",
+        "pronunciation": "/,vedʒi'teəriən/"
+      }
+    ]
+  },
+  {
+    "name": "Work, Business & Careers",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Applicant",
+        "vietnamese": "Người nộp đơn, ứng viên",
+        "meaning": "n. a person who makes a formal application for something, especially a job",
+        "wordForms": "apply (v), application (n)",
+        "pronunciation": "/'æplikənt/"
+      },
+      {
+        "english": "Bonus",
+        "vietnamese": "Tiền thưởng, khoản thưởng",
+        "meaning": "n. an amount of money added to wages on a seasonal basis or for good performance",
+        "wordForms": "",
+        "pronunciation": "/'bəʊnəs/"
+      },
+      {
+        "english": "Career",
+        "vietnamese": "Sự nghiệp, nghề nghiệp",
+        "meaning": "n. an occupation undertaken for a significant period of a person's life with opportunities for progress",
+        "wordForms": "",
+        "pronunciation": "/kə'riə/"
+      },
+      {
+        "english": "Colleague",
+        "vietnamese": "Đồng nghiệp",
+        "meaning": "n. a fellow worker or member of a staff",
+        "wordForms": "",
+        "pronunciation": "/'kɒli:g/"
+      },
+      {
+        "english": "Deadline",
+        "vietnamese": "Hạn chót, thời hạn hoàn thành",
+        "meaning": "n. the latest time or date by which something should be completed",
+        "wordForms": "",
+        "pronunciation": "/'dedlain/"
+      },
+      {
+        "english": "Employee",
+        "vietnamese": "Nhân viên, người lao động",
+        "meaning": "n. a person employed for wages or salary, especially at non-executive level",
+        "wordForms": "employ (v), employer (n), employment (n)",
+        "pronunciation": "/im'plɔɪi:/"
+      },
+      {
+        "english": "Enterprise",
+        "vietnamese": "Doanh nghiệp, dự án kinh doanh",
+        "meaning": "n. a business or company; a project or undertaking, especially a bold or complex one",
+        "wordForms": "enterprising (adj)",
+        "pronunciation": "/'entəpraiz/"
+      },
+      {
+        "english": "Executive",
+        "vietnamese": "Người điều hành, giám đốc",
+        "meaning": "n. a person with senior managerial responsibility in a business organization",
+        "wordForms": "execute (v)",
+        "pronunciation": "/ig'zekjətiv/"
+      },
+      {
+        "english": "Interview",
+        "vietnamese": "Buổi phỏng vấn",
+        "meaning": "n. a meeting of people face to face, especially for consultation or assessment of a job applicant",
+        "wordForms": "interviewer (n), interviewee (n)",
+        "pronunciation": "/'intəvju:/"
+      },
+      {
+        "english": "Profession",
+        "vietnamese": "Nghề nghiệp chuyên môn",
+        "meaning": "n. a paid occupation, especially one that involves prolonged training and a formal qualification",
+        "wordForms": "professional (adj, n)",
+        "pronunciation": "/prə'feʃn/"
+      },
+      {
+        "english": "Promotion",
+        "vietnamese": "Sự thăng chức, đề bạt",
+        "meaning": "n. the action of raising someone to a higher position or rank",
+        "wordForms": "promote (v), promotional (adj)",
+        "pronunciation": "/prə'məʊʃn/"
+      },
+      {
+        "english": "Resign",
+        "vietnamese": "Từ chức, thôi việc",
+        "meaning": "v. voluntarily leave a job or other position",
+        "wordForms": "resignation (n)",
+        "pronunciation": "/ri'zain/"
+      },
+      {
+        "english": "Salary",
+        "vietnamese": "Tiền lương hàng tháng",
+        "meaning": "n. a fixed regular payment, typically paid on a monthly basis, by an employer to an employee",
+        "wordForms": "salaried (adj)",
+        "pronunciation": "/'sæləri/"
+      },
+      {
+        "english": "Vacancy",
+        "vietnamese": "Vị trí tuyển dụng còn trống",
+        "meaning": "n. an unoccupied job or position available for an applicant",
+        "wordForms": "vacant (adj)",
+        "pronunciation": "/'veikənsi/"
+      }
+    ]
+  },
+  {
+    "name": "Education, Study & Learning",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Academic",
+        "vietnamese": "Thuộc về học thuật",
+        "meaning": "adj. relating to education and scholarship; not practical or directly useful",
+        "wordForms": "academy (n), academically (adv)",
+        "pronunciation": "/,ækə'demik/"
+      },
+      {
+        "english": "Assignment",
+        "vietnamese": "Bài tập, bài tập lớn",
+        "meaning": "n. a task or piece of work assigned to someone as part of a course of study",
+        "wordForms": "assign (v)",
+        "pronunciation": "/ə'sainmənt/"
+      },
+      {
+        "english": "Campus",
+        "vietnamese": "Khuôn viên trường đại học",
+        "meaning": "n. the grounds and buildings of a university or college",
+        "wordForms": "",
+        "pronunciation": "/'kæmpəs/"
+      },
+      {
+        "english": "Certificate",
+        "vietnamese": "Chứng chỉ, văn bằng",
+        "meaning": "n. an official document attesting a certain fact, especially educational achievement",
+        "wordForms": "certify (v), certified (adj)",
+        "pronunciation": "/sə'tifikət/"
+      },
+      {
+        "english": "Curriculum",
+        "vietnamese": "Chương trình học tập",
+        "meaning": "n. the subjects comprising a course of study in a school or college",
+        "wordForms": "curricular (adj)",
+        "pronunciation": "/kə'rikjələm/"
+      },
+      {
+        "english": "Degree",
+        "vietnamese": "Bằng cấp đại học",
+        "meaning": "n. an academic rank conferred by a college or university after examination or after completion of a course",
+        "wordForms": "",
+        "pronunciation": "/di'gri:/"
+      },
+      {
+        "english": "Discipline",
+        "vietnamese": "Kỷ luật, chuyên ngành học",
+        "meaning": "n. the practice of training people to obey rules; also a branch of knowledge",
+        "wordForms": "disciplinary (adj)",
+        "pronunciation": "/'disiplin/"
+      },
+      {
+        "english": "Faculty",
+        "vietnamese": "Khoa giảng dạy, ban giảng viên",
+        "meaning": "n. a group of university departments concerned with a major division of knowledge",
+        "wordForms": "",
+        "pronunciation": "/'fæklti/"
+      },
+      {
+        "english": "Graduate",
+        "vietnamese": "Tốt nghiệp, người tốt nghiệp",
+        "meaning": "v. successfully complete an academic degree; n. a person who has graduated",
+        "wordForms": "graduation (n)",
+        "pronunciation": "/'grædʒueit/"
+      },
+      {
+        "english": "Laboratory",
+        "vietnamese": "Phòng thí nghiệm",
+        "meaning": "n. a room or building equipped for scientific experiments, research, or teaching",
+        "wordForms": "",
+        "pronunciation": "/lə'bɒrətri/"
+      },
+      {
+        "english": "Lecture",
+        "vietnamese": "Bài giảng, thuyết trình",
+        "meaning": "n. an educational talk to an audience, especially one of students in a university",
+        "wordForms": "lecturer (n)",
+        "pronunciation": "/'lektʃə/"
+      },
+      {
+        "english": "Qualification",
+        "vietnamese": "Bằng cấp, năng lực đạt chuẩn",
+        "meaning": "n. a pass of an examination or an official completion of a course",
+        "wordForms": "qualify (v), qualified (adj)",
+        "pronunciation": "/,kwɒlifi'keiʃn/"
+      },
+      {
+        "english": "Scholarship",
+        "vietnamese": "Học bổng",
+        "meaning": "n. a grant or payment made to support a student's education, awarded on the basis of academic achievement",
+        "wordForms": "scholar (n)",
+        "pronunciation": "/'skɒləʃip/"
+      },
+      {
+        "english": "Semester",
+        "vietnamese": "Học kỳ",
+        "meaning": "n. a half-year term in a school or college, typically lasting for fifteen to eighteen weeks",
+        "wordForms": "",
+        "pronunciation": "/si'mestə/"
+      }
+    ]
+  },
+  {
+    "name": "Travel, Transport & Tourism",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Baggage",
+        "vietnamese": "Hành lý",
+        "meaning": "n. personal belongings packed in suitcases for traveling",
+        "wordForms": "luggage (synonym)",
+        "pronunciation": "/'bægidʒ/"
+      },
+      {
+        "english": "Boarding",
+        "vietnamese": "Lên tàu xe, lên máy bay",
+        "meaning": "n. the action of getting on or into a ship, aircraft, or other vehicle",
+        "wordForms": "board (v)",
+        "pronunciation": "/'bɔ:diŋ/"
+      },
+      {
+        "english": "Cruise",
+        "vietnamese": "Chuyến du ngoạn bằng tàu thủy",
+        "meaning": "n. a voyage on a ship or boat taken for pleasure or as a vacation",
+        "wordForms": "cruiser (n)",
+        "pronunciation": "/kru:z/"
+      },
+      {
+        "english": "Delay",
+        "vietnamese": "Sự trì hoãn, chậm trễ",
+        "meaning": "n. a period of time by which something is late or postponed; v. to postpone",
+        "wordForms": "delayed (adj)",
+        "pronunciation": "/di'lei/"
+      },
+      {
+        "english": "Departure",
+        "vietnamese": "Sự khởi hành, xuất phát",
+        "meaning": "n. the action of leaving, especially on a journey",
+        "wordForms": "depart (v)",
+        "pronunciation": "/di'pɑ:tʃə/"
+      },
+      {
+        "english": "Destination",
+        "vietnamese": "Điểm đến",
+        "meaning": "n. the place to which someone or something is going or being sent",
+        "wordForms": "destined (adj)",
+        "pronunciation": "/,desti'neiʃn/"
+      },
+      {
+        "english": "Excursion",
+        "vietnamese": "Chuyến dã ngoại, tham quan ngắn",
+        "meaning": "n. a short journey or trip, especially one taken as a leisure activity",
+        "wordForms": "",
+        "pronunciation": "/ik'skɜ:ʃn/"
+      },
+      {
+        "english": "Itinerary",
+        "vietnamese": "Lịch trình chuyến đi",
+        "meaning": "n. a planned route or journey schedule with dates and stops",
+        "wordForms": "",
+        "pronunciation": "/ai'tinərəri/"
+      },
+      {
+        "english": "Passenger",
+        "vietnamese": "Hành khách",
+        "meaning": "n. a traveler on a public or private conveyance other than the driver or crew",
+        "wordForms": "",
+        "pronunciation": "/'pæsindʒə/"
+      },
+      {
+        "english": "Passport",
+        "vietnamese": "Hộ chiếu",
+        "meaning": "n. an official document issued by a government, certifying the holder's identity and citizenship",
+        "wordForms": "",
+        "pronunciation": "/'pɑ:spɔ:t/"
+      },
+      {
+        "english": "Reservation",
+        "vietnamese": "Sự đặt chỗ trước",
+        "meaning": "n. an arrangement to secure accommodations in a hotel, restaurant, or airplane in advance",
+        "wordForms": "reserve (v)",
+        "pronunciation": "/,rezə'veiʃn/"
+      },
+      {
+        "english": "Sightseeing",
+        "vietnamese": "Sự ngắm cảnh, tham quan",
+        "meaning": "n. the activity of visiting places of interest in a particular location by tourists",
+        "wordForms": "sightseer (n)",
+        "pronunciation": "/'saitsi:iŋ/"
+      },
+      {
+        "english": "Suitcase",
+        "vietnamese": "Chiếc va li",
+        "meaning": "n. a case with a handle and a hinged lid, used for carrying clothes and other personal possessions",
+        "wordForms": "",
+        "pronunciation": "/'su:tkeis/"
+      }
+    ]
+  },
+  {
+    "name": "Health, Body & Medicine",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Allergy",
+        "vietnamese": "Dị ứng",
+        "meaning": "n. a damaging immune response by the body to a substance, especially pollen, fur, a particular food, or dust",
+        "wordForms": "allergic (adj)",
+        "pronunciation": "/'ælədʒi/"
+      },
+      {
+        "english": "Ambulance",
+        "vietnamese": "Xe cứu thương",
+        "meaning": "n. a vehicle equipped for taking sick or injured people to and from hospital, especially in emergencies",
+        "wordForms": "",
+        "pronunciation": "/'æmbjələns/"
+      },
+      {
+        "english": "Condition",
+        "vietnamese": "Tình trạng sức khỏe",
+        "meaning": "n. an illness or other medical problem; state of physical fitness",
+        "wordForms": "conditional (adj)",
+        "pronunciation": "/kən'diʃn/"
+      },
+      {
+        "english": "Cure",
+        "vietnamese": "Chữa lành, phương pháp chữa trị",
+        "meaning": "v. to relieve a person or animal of the symptoms of a disease; n. a remedy",
+        "wordForms": "curable (adj)",
+        "pronunciation": "/kjʊə/"
+      },
+      {
+        "english": "Disease",
+        "vietnamese": "Bệnh tật",
+        "meaning": "n. a disorder of structure or function in a human, animal, or plant",
+        "wordForms": "diseased (adj)",
+        "pronunciation": "/di'zi:z/"
+      },
+      {
+        "english": "Epidemic",
+        "vietnamese": "Bệnh dịch, đợt bùng phát dịch",
+        "meaning": "n. a widespread occurrence of an infectious disease in a community at a particular time",
+        "wordForms": "",
+        "pronunciation": "/,epi'demik/"
+      },
+      {
+        "english": "Fatigue",
+        "vietnamese": "Sự mệt mỏi, kiệt sức",
+        "meaning": "n. extreme tiredness resulting from mental or physical exertion or illness",
+        "wordForms": "",
+        "pronunciation": "/fə'ti:g/"
+      },
+      {
+        "english": "Infection",
+        "vietnamese": "Sự nhiễm trùng",
+        "meaning": "n. the process of infecting or the state of being infected with a disease-causing organism",
+        "wordForms": "infect (v), infectious (adj)",
+        "pronunciation": "/in'fekʃn/"
+      },
+      {
+        "english": "Injury",
+        "vietnamese": "Chấn thương, vết thương",
+        "meaning": "n. an instance of being injured; physical harm to a body",
+        "wordForms": "injure (v), injured (adj)",
+        "pronunciation": "/'indʒəri/"
+      },
+      {
+        "english": "Medication",
+        "vietnamese": "Thuốc điều trị",
+        "meaning": "n. a substance used for medical treatment, especially a medicine or drug",
+        "wordForms": "medicate (v), medical (adj)",
+        "pronunciation": "/,medi'keiʃn/"
+      },
+      {
+        "english": "Patient",
+        "vietnamese": "Bệnh nhân",
+        "meaning": "n. a person receiving or registered to receive medical treatment",
+        "wordForms": "patience (n)",
+        "pronunciation": "/'peiʃnt/"
+      },
+      {
+        "english": "Pharmacy",
+        "vietnamese": "Hiệu thuốc, nhà thuốc",
+        "meaning": "n. a shop or hospital dispensary where medicinal drugs are prepared or sold",
+        "wordForms": "pharmacist (n)",
+        "pronunciation": "/'fɑ:məsi/"
+      },
+      {
+        "english": "Recover",
+        "vietnamese": "Hồi phục, bình phục",
+        "meaning": "v. return to a normal state of health, mind, or strength",
+        "wordForms": "recovery (n)",
+        "pronunciation": "/ri'kʌvə/"
+      },
+      {
+        "english": "Symptom",
+        "vietnamese": "Triệu chứng",
+        "meaning": "n. a physical or mental feature that indicates a condition of disease",
+        "wordForms": "symptomatic (adj)",
+        "pronunciation": "/'simptəm/"
+      },
+      {
+        "english": "Therapy",
+        "vietnamese": "Liệu pháp điều trị",
+        "meaning": "n. treatment intended to relieve or heal a disorder",
+        "wordForms": "therapist (n), therapeutic (adj)",
+        "pronunciation": "/'θerəpi/"
+      }
+    ]
+  },
+  {
+    "name": "Money, Finance & Economy",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Account",
+        "vietnamese": "Tài khoản ngân hàng",
+        "meaning": "n. an arrangement by which a bank holds funds on behalf of a client",
+        "wordForms": "accountant (n), accounting (n)",
+        "pronunciation": "/ə'kaʊnt/"
+      },
+      {
+        "english": "Bankrupt",
+        "vietnamese": "Phá sản",
+        "meaning": "adj. declared in law as unable to pay their debts",
+        "wordForms": "bankruptcy (n)",
+        "pronunciation": "/'bæŋkrʌpt/"
+      },
+      {
+        "english": "Budget",
+        "vietnamese": "Ngân sách",
+        "meaning": "n. an estimate of income and expenditure for a set period of time",
+        "wordForms": "budgetary (adj)",
+        "pronunciation": "/'bʌdʒit/"
+      },
+      {
+        "english": "Capital",
+        "vietnamese": "Vốn đầu tư, nguồn vốn",
+        "meaning": "n. wealth in the form of money or other assets owned by a person or organization",
+        "wordForms": "capitalize (v)",
+        "pronunciation": "/'kæpitl/"
+      },
+      {
+        "english": "Currency",
+        "vietnamese": "Đơn vị tiền tệ",
+        "meaning": "n. a system of money in general use in a particular country",
+        "wordForms": "",
+        "pronunciation": "/'kʌrənsi/"
+      },
+      {
+        "english": "Deposit",
+        "vietnamese": "Tiền gửi, khoản đặt cọc",
+        "meaning": "n. a sum of money placed or kept in a bank account, or given as a first installment",
+        "wordForms": "depositor (n)",
+        "pronunciation": "/di'pɒzit/"
+      },
+      {
+        "english": "Expense",
+        "vietnamese": "Chi phí, chi tiêu",
+        "meaning": "n. the cost required for something; the money spent on something",
+        "wordForms": "expensive (adj)",
+        "pronunciation": "/ik'spens/"
+      },
+      {
+        "english": "Income",
+        "vietnamese": "Thu nhập",
+        "meaning": "n. money received, especially on a regular basis, for work or through investments",
+        "wordForms": "",
+        "pronunciation": "/'iŋkʌm/"
+      },
+      {
+        "english": "Inflation",
+        "vietnamese": "Lạm phát",
+        "meaning": "n. a general increase in prices and fall in the purchasing value of money",
+        "wordForms": "inflate (v), inflationary (adj)",
+        "pronunciation": "/in'fleiʃn/"
+      },
+      {
+        "english": "Invest",
+        "vietnamese": "Đầu tư",
+        "meaning": "v. to expend money with the expectation of achieving a profit or material result",
+        "wordForms": "investment (n), investor (n)",
+        "pronunciation": "/in'vest/"
+      },
+      {
+        "english": "Loan",
+        "vietnamese": "Khoản tiền vay",
+        "meaning": "n. a thing that is borrowed, especially a sum of money that is expected to be paid back with interest",
+        "wordForms": "",
+        "pronunciation": "/ləʊn/"
+      },
+      {
+        "english": "Purchase",
+        "vietnamese": "Mua sắm, giao dịch mua",
+        "meaning": "v. acquire something by paying for it; n. the act of buying something",
+        "wordForms": "purchaser (n)",
+        "pronunciation": "/'pɜ:tʃəs/"
+      },
+      {
+        "english": "Refund",
+        "vietnamese": "Hoàn tiền",
+        "meaning": "n. a payback of a sum of money, typically to a dissatisfied customer; v. to repay",
+        "wordForms": "refundable (adj)",
+        "pronunciation": "/'ri:fʌnd/"
+      },
+      {
+        "english": "Transaction",
+        "vietnamese": "Giao dịch tài chính",
+        "meaning": "n. an instance of buying or selling something; a business deal",
+        "wordForms": "transact (v)",
+        "pronunciation": "/træn'zækʃn/"
+      }
+    ]
+  },
+  {
+    "name": "Feelings, Personality & Emotions",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Ambitious",
+        "vietnamese": "Có nhiều hoài bão, khát vọng",
+        "meaning": "adj. having or showing a strong desire and determination to succeed",
+        "wordForms": "ambition (n)",
+        "pronunciation": "/æm'biʃəs/"
+      },
+      {
+        "english": "Anxious",
+        "vietnamese": "Lo lắng, bồn chồn",
+        "meaning": "adj. experiencing worry, unease, or nervousness, typically about an imminent event",
+        "wordForms": "anxiety (n), anxiously (adv)",
+        "pronunciation": "/'æŋkʃəs/"
+      },
+      {
+        "english": "Cheerful",
+        "vietnamese": "Vui vẻ, phấn khởi",
+        "meaning": "adj. noticeably happy and optimistic",
+        "wordForms": "cheer (v, n), cheerfully (adv)",
+        "pronunciation": "/'tʃiəfl/"
+      },
+      {
+        "english": "Compassionate",
+        "vietnamese": "Giàu lòng trắc ẩn, nhân ái",
+        "meaning": "adj. feeling or showing sympathy and concern for others",
+        "wordForms": "compassion (n)",
+        "pronunciation": "/kəm'pæʃənət/"
+      },
+      {
+        "english": "Confident",
+        "vietnamese": "Tự tin",
+        "meaning": "adj. feeling or showing certainty about something or one's own abilities",
+        "wordForms": "confidence (n), confidently (adv)",
+        "pronunciation": "/'kɒnfidənt/"
+      },
+      {
+        "english": "Courageous",
+        "vietnamese": "Dũng cảm, can đảm",
+        "meaning": "adj. not deterred by danger or pain; brave",
+        "wordForms": "courage (n)",
+        "pronunciation": "/kə'reidʒəs/"
+      },
+      {
+        "english": "Delighted",
+        "vietnamese": "Vô cùng hài lòng, hân hoan",
+        "meaning": "adj. feeling or showing great pleasure",
+        "wordForms": "delight (n, v)",
+        "pronunciation": "/di'laitid/"
+      },
+      {
+        "english": "Depressed",
+        "vietnamese": "Chán nản, u uất",
+        "meaning": "adj. in a state of general unhappiness or despondency",
+        "wordForms": "depression (n), depressing (adj)",
+        "pronunciation": "/di'prest/"
+      },
+      {
+        "english": "Enthusiastic",
+        "vietnamese": "Nhiệt tình, hăng hái",
+        "meaning": "adj. having or showing intense and eager enjoyment, interest, or approval",
+        "wordForms": "enthusiasm (n)",
+        "pronunciation": "/in,θju:zi'æstik/"
+      },
+      {
+        "english": "Generous",
+        "vietnamese": "Hào phóng, rộng lượng",
+        "meaning": "adj. showing a readiness to give more of something, especially money, than is strictly necessary or expected",
+        "wordForms": "generosity (n)",
+        "pronunciation": "/'dʒenərəs/"
+      },
+      {
+        "english": "Grateful",
+        "vietnamese": "Biết ơn",
+        "meaning": "adj. feeling or showing an appreciation of kindness; thankful",
+        "wordForms": "gratitude (n)",
+        "pronunciation": "/'greitfl/"
+      },
+      {
+        "english": "Optimistic",
+        "vietnamese": "Lạc quan",
+        "meaning": "adj. hopeful and confident about the future",
+        "wordForms": "optimism (n), optimist (n)",
+        "pronunciation": "/,ɒpti'mistik/"
+      },
+      {
+        "english": "Pessimistic",
+        "vietnamese": "Bi quan",
+        "meaning": "adj. tending to see the worst aspect of things or believe that the worst will happen",
+        "wordForms": "pessimism (n), pessimist (n)",
+        "pronunciation": "/,pesi'mistik/"
+      },
+      {
+        "english": "Sympathetic",
+        "vietnamese": "Đồng cảm, thông cảm",
+        "meaning": "adj. feeling, showing, or expressing sympathy",
+        "wordForms": "sympathy (n)",
+        "pronunciation": "/,simpə'θetik/"
+      }
+    ]
+  },
+  {
+    "name": "Nature, Environment & Weather",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Atmosphere",
+        "vietnamese": "Bầu khí quyển, không khí",
+        "meaning": "n. the envelope of gases surrounding the earth or another planet",
+        "wordForms": "atmospheric (adj)",
+        "pronunciation": "/'ætməsfiə/"
+      },
+      {
+        "english": "Climate",
+        "vietnamese": "Khí hậu",
+        "meaning": "n. the weather conditions prevailing in an area in general or over a long period",
+        "wordForms": "climatic (adj)",
+        "pronunciation": "/'klaimit/"
+      },
+      {
+        "english": "Conservation",
+        "vietnamese": "Sự bảo tồn thiên nhiên",
+        "meaning": "n. the preservation and careful management of the environment and of natural resources",
+        "wordForms": "conserve (v)",
+        "pronunciation": "/,kɒnsə'veiʃn/"
+      },
+      {
+        "english": "Disaster",
+        "vietnamese": "Thảm họa, thiên tai",
+        "meaning": "n. a sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life",
+        "wordForms": "disastrous (adj)",
+        "pronunciation": "/di'zɑ:stə/"
+      },
+      {
+        "english": "Drought",
+        "vietnamese": "Hạn hán",
+        "meaning": "n. a prolonged period of abnormally low rainfall, leading to a shortage of water",
+        "wordForms": "",
+        "pronunciation": "/draut/"
+      },
+      {
+        "english": "Earthquake",
+        "vietnamese": "Động đất",
+        "meaning": "n. a sudden and violent shaking of the ground, sometimes causing great destruction",
+        "wordForms": "",
+        "pronunciation": "/'ɜ:θkweik/"
+      },
+      {
+        "english": "Ecosystem",
+        "vietnamese": "Hệ sinh thái",
+        "meaning": "n. a biological community of interacting organisms and their physical environment",
+        "wordForms": "",
+        "pronunciation": "/'i:kəʊsistəm/"
+      },
+      {
+        "english": "Endangered",
+        "vietnamese": "Có nguy cơ tuyệt chủng",
+        "meaning": "adj. at serious risk of extinction",
+        "wordForms": "endanger (v)",
+        "pronunciation": "/in'deindʒəd/"
+      },
+      {
+        "english": "Forecast",
+        "vietnamese": "Dự báo thời tiết",
+        "meaning": "v. predict or estimate a future event or trend; n. a weather calculation",
+        "wordForms": "",
+        "pronunciation": "/'fɔ:kɑ:st/"
+      },
+      {
+        "english": "Pollution",
+        "vietnamese": "Sự ô nhiễm",
+        "meaning": "n. the presence in or introduction into the environment of a substance or thing that has harmful or poisonous effects",
+        "wordForms": "pollute (v), pollutant (n)",
+        "pronunciation": "/pə'lu:ʃn/"
+      },
+      {
+        "english": "Renewable",
+        "vietnamese": "Tái tạo được (năng lượng)",
+        "meaning": "adj. of a natural resource or source of energy: not depleted by use, such as water, wind, or solar power",
+        "wordForms": "renew (v)",
+        "pronunciation": "/ri'nju:əbl/"
+      },
+      {
+        "english": "Wildlife",
+        "vietnamese": "Động vật hoang dã",
+        "meaning": "n. wild animals collectively; the native fauna and flora of a region",
+        "wordForms": "",
+        "pronunciation": "/'waildlaif/"
+      }
+    ]
+  },
+  {
+    "name": "Technology, Computing & Media",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Algorithm",
+        "vietnamese": "Thuật toán",
+        "meaning": "n. a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer",
+        "wordForms": "algorithmic (adj)",
+        "pronunciation": "/'ælgəriðəm/"
+      },
+      {
+        "english": "Artificial",
+        "vietnamese": "Nhân tạo",
+        "meaning": "adj. made or produced by human beings rather than occurring naturally",
+        "wordForms": "artificially (adv)",
+        "pronunciation": "/,ɑ:ti'fiʃl/"
+      },
+      {
+        "english": "Cyberspace",
+        "vietnamese": "Không gian mạng",
+        "meaning": "n. the notional environment in which communication over computer networks occurs",
+        "wordForms": "",
+        "pronunciation": "/'saibəspeis/"
+      },
+      {
+        "english": "Database",
+        "vietnamese": "Cơ sở dữ liệu",
+        "meaning": "n. a structured set of data held in a computer, especially one that is accessible in various ways",
+        "wordForms": "",
+        "pronunciation": "/'deitəbeis/"
+      },
+      {
+        "english": "Device",
+        "vietnamese": "Thiết bị điện tử",
+        "meaning": "n. a thing made or adapted for a particular purpose, especially a piece of electronic equipment",
+        "wordForms": "",
+        "pronunciation": "/di'vais/"
+      },
+      {
+        "english": "Digital",
+        "vietnamese": "Kỹ thuật số",
+        "meaning": "adj. expressed as series of the digits 0 and 1, typically represented by values of a physical quantity such as the voltage",
+        "wordForms": "digitize (v)",
+        "pronunciation": "/'didʒitl/"
+      },
+      {
+        "english": "Network",
+        "vietnamese": "Mạng lưới, mạng kết nối",
+        "meaning": "n. a group of interconnected computers and electronic systems",
+        "wordForms": "networking (n)",
+        "pronunciation": "/'netwɜ:k/"
+      },
+      {
+        "english": "Platform",
+        "vietnamese": "Nền tảng công nghệ",
+        "meaning": "n. a standard for the hardware of a full computer system, which determines what kind of software it can run",
+        "wordForms": "",
+        "pronunciation": "/'plætfɔ:m/"
+      },
+      {
+        "english": "Privacy",
+        "vietnamese": "Quyền riêng tư, bảo mật cá nhân",
+        "meaning": "n. the state or condition of being free from being observed or disturbed by other people",
+        "wordForms": "private (adj)",
+        "pronunciation": "/'privəsi/"
+      },
+      {
+        "english": "Security",
+        "vietnamese": "An ninh, bảo mật mạng",
+        "meaning": "n. the state of being free from danger or threat; safety of computer systems",
+        "wordForms": "secure (adj, v)",
+        "pronunciation": "/si'kjʊərəti/"
+      },
+      {
+        "english": "Software",
+        "vietnamese": "Phần mềm",
+        "meaning": "n. the programs and other operating information used by a computer",
+        "wordForms": "",
+        "pronunciation": "/'sɒftweə/"
+      },
+      {
+        "english": "Subscribe",
+        "vietnamese": "Đăng ký theo dõi, bao bao dài hạn",
+        "meaning": "v. arrange to receive something regularly, typically a publication or service, by paying in advance",
+        "wordForms": "subscription (n), subscriber (n)",
+        "pronunciation": "/səb'skraib/"
+      },
+      {
+        "english": "Virtual",
+        "vietnamese": "Thực tế ảo, trên mạng",
+        "meaning": "adj. not physically existing as such but made by software to appear to do so",
+        "wordForms": "virtually (adv)",
+        "pronunciation": "/'vɜ:tʃuəl/"
+      },
+      {
+        "english": "Wireless",
+        "vietnamese": "Không dây",
+        "meaning": "adj. using radio, microwaves, etc. rather than electric wires to transmit signals",
+        "wordForms": "",
+        "pronunciation": "/'waiələs/"
+      }
+    ]
+  },
+  {
+    "name": "Arts, Entertainment & Leisure",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Applaud",
+        "vietnamese": "Vỗ tay tán thưởng",
+        "meaning": "v. show approval or praise by clapping the hands together",
+        "wordForms": "applause (n)",
+        "pronunciation": "/ə'plɔ:d/"
+      },
+      {
+        "english": "Audience",
+        "vietnamese": "Khán giả, thính giả",
+        "meaning": "n. the assembled spectators or listeners at a public event such as a play, movie, concert, or meeting",
+        "wordForms": "",
+        "pronunciation": "/'ɔ:diəns/"
+      },
+      {
+        "english": "Broadcast",
+        "vietnamese": "Phát sóng, truyền hình",
+        "meaning": "v. transmit by radio or television; n. a radio or television program",
+        "wordForms": "broadcaster (n)",
+        "pronunciation": "/'brɔ:dkɑ:st/"
+      },
+      {
+        "english": "Concert",
+        "vietnamese": "Buổi hòa nhạc",
+        "meaning": "n. a musical performance given in public, typically by several performers or of several separate compositions",
+        "wordForms": "",
+        "pronunciation": "/'kɒnsət/"
+      },
+      {
+        "english": "Exhibition",
+        "vietnamese": "Cuộc triển lãm",
+        "meaning": "n. a public display of works of art or items of interest, held in an art gallery or museum",
+        "wordForms": "exhibit (v, n)",
+        "pronunciation": "/,eksi'biʃn/"
+      },
+      {
+        "english": "Festival",
+        "vietnamese": "Lễ hội",
+        "meaning": "n. a day or period of celebration, typically a religious or cultural event",
+        "wordForms": "festive (adj)",
+        "pronunciation": "/'festivl/"
+      },
+      {
+        "english": "Gallery",
+        "vietnamese": "Phòng trưng bày nghệ thuật",
+        "meaning": "n. a room or building for the display or sale of works of art",
+        "wordForms": "",
+        "pronunciation": "/'gæləri/"
+      },
+      {
+        "english": "Leisure",
+        "vietnamese": "Thời gian thư giãn, rảnh rỗi",
+        "meaning": "n. time when one is not working or occupied; free time",
+        "wordForms": "leisurely (adj, adv)",
+        "pronunciation": "/'leʒə/"
+      },
+      {
+        "english": "Melody",
+        "vietnamese": "Giai điệu",
+        "meaning": "n. a sequence of single notes that is musically satisfying; a tune",
+        "wordForms": "melodic (adj)",
+        "pronunciation": "/'melədi/"
+      },
+      {
+        "english": "Museum",
+        "vietnamese": "Viện bảo tàng",
+        "meaning": "n. a building in which objects of historical, scientific, artistic, or cultural interest are stored and exhibited",
+        "wordForms": "",
+        "pronunciation": "/mju:'zi:əm/"
+      },
+      {
+        "english": "Orchestra",
+        "vietnamese": "Dàn nhạc giao hưởng",
+        "meaning": "n. a group of instrumentalists, especially one combining string, woodwind, brass, and percussion sections",
+        "wordForms": "orchestral (adj)",
+        "pronunciation": "/'ɔ:kistrə/"
+      },
+      {
+        "english": "Performance",
+        "vietnamese": "Màn biểu diễn, tiết mục",
+        "meaning": "n. an act of staging or presenting a play, concert, or other form of entertainment",
+        "wordForms": "perform (v), performer (n)",
+        "pronunciation": "/pə'fɔ:məns/"
+      },
+      {
+        "english": "Theater",
+        "vietnamese": "Nhà hát, rạp kịch",
+        "meaning": "n. a building or outdoor area in which plays and other dramatic performances are given",
+        "wordForms": "theatrical (adj)",
+        "pronunciation": "/'θiətə/"
+      }
+    ]
+  },
+  {
+    "name": "Law, Society & Government",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Authority",
+        "vietnamese": "Chính quyền, thẩm quyền",
+        "meaning": "n. the power or right to give orders, make decisions, and enforce obedience",
+        "wordForms": "authoritative (adj)",
+        "pronunciation": "/ɔ:'θɒrəti/"
+      },
+      {
+        "english": "Citizen",
+        "vietnamese": "Công dân",
+        "meaning": "n. a legally recognized subject or national of a state or commonwealth, either native or naturalized",
+        "wordForms": "citizenship (n)",
+        "pronunciation": "/'sitizn/"
+      },
+      {
+        "english": "Constitution",
+        "vietnamese": "Hiến pháp",
+        "meaning": "n. a body of fundamental principles according to which a state or organization is governed",
+        "wordForms": "constitutional (adj)",
+        "pronunciation": "/,kɒnsti'tju:ʃn/"
+      },
+      {
+        "english": "Court",
+        "vietnamese": "Tòa án",
+        "meaning": "n. a tribunal presided over by a judge, judges, or a magistrate in civil and criminal cases",
+        "wordForms": "",
+        "pronunciation": "/kɔ:t/"
+      },
+      {
+        "english": "Crime",
+        "vietnamese": "Tội phạm, hành vi phạm tội",
+        "meaning": "n. an action or omission that constitutes an offense that may be prosecuted by the state and is punishable by law",
+        "wordForms": "criminal (adj, n)",
+        "pronunciation": "/kraim/"
+      },
+      {
+        "english": "Democracy",
+        "vietnamese": "Chế độ dân chủ",
+        "meaning": "n. a system of government by the whole population, typically through elected representatives",
+        "wordForms": "democratic (adj)",
+        "pronunciation": "/di'mɒkrəsi/"
+      },
+      {
+        "english": "Election",
+        "vietnamese": "Cuộc bầu cử",
+        "meaning": "n. a formal and organized process of electing or being elected, especially of members of a political body",
+        "wordForms": "elect (v)",
+        "pronunciation": "/i'lekʃn/"
+      },
+      {
+        "english": "Government",
+        "vietnamese": "Chính phủ",
+        "meaning": "n. the governing body of a nation, state, or community",
+        "wordForms": "govern (v), governmental (adj)",
+        "pronunciation": "/'gʌvənmənt/"
+      },
+      {
+        "english": "Innocent",
+        "vietnamese": "Vô tội",
+        "meaning": "adj. not guilty of a crime or other wrong act",
+        "wordForms": "innocence (n)",
+        "pronunciation": "/'inəsnt/"
+      },
+      {
+        "english": "Justice",
+        "vietnamese": "Sự công bằng, công lý",
+        "meaning": "n. just behavior or treatment; the quality of being fair and reasonable",
+        "wordForms": "justify (v)",
+        "pronunciation": "/'dʒʌstis/"
+      },
+      {
+        "english": "Parliament",
+        "vietnamese": "Nghị viện, quốc hội",
+        "meaning": "n. the highest legislature, consisting of the sovereign, the House of Lords, and the House of Commons in the UK",
+        "wordForms": "parliamentary (adj)",
+        "pronunciation": "/'pɑ:ləmənt/"
+      },
+      {
+        "english": "Penalty",
+        "vietnamese": "Hình phạt",
+        "meaning": "n. a punishment imposed for breaking a law, rule, or contract",
+        "wordForms": "penalize (v)",
+        "pronunciation": "/'penəlti/"
+      },
+      {
+        "english": "Policy",
+        "vietnamese": "Chính sách",
+        "meaning": "n. a course or principle of action adopted or proposed by a government, party, business, or individual",
+        "wordForms": "",
+        "pronunciation": "/'pɒləsi/"
+      },
+      {
+        "english": "Regulation",
+        "vietnamese": "Quy định, quy chế",
+        "meaning": "n. a rule or directive made and maintained by an authority",
+        "wordForms": "regulate (v)",
+        "pronunciation": "/,regju'leiʃn/"
+      }
+    ]
+  },
+  {
+    "name": "Science, Mind & Critical Thinking",
+    "book": "Oxford 3000 Vocabulary",
+    "words": [
+      {
+        "english": "Analyze",
+        "vietnamese": "Phân tích",
+        "meaning": "v. examine methodically and in detail the constitution or structure of something",
+        "wordForms": "analysis (n), analytical (adj)",
+        "pronunciation": "/'ænəlaiz/"
+      },
+      {
+        "english": "Conclusion",
+        "vietnamese": "Kết luận",
+        "meaning": "n. the end or finish of an event or process; a judgment reached by reasoning",
+        "wordForms": "conclude (v), conclusive (adj)",
+        "pronunciation": "/kən'klu:ʒn/"
+      },
+      {
+        "english": "Discovery",
+        "vietnamese": "Phát hiện, khám phá",
+        "meaning": "n. the action or process of discovering being discovered",
+        "wordForms": "discover (v)",
+        "pronunciation": "/di'skʌvəri/"
+      },
+      {
+        "english": "Evidence",
+        "vietnamese": "Bằng chứng, chứng cứ",
+        "meaning": "n. the available body of facts or information indicating whether a belief or proposition is true or valid",
+        "wordForms": "evident (adj)",
+        "pronunciation": "/'evidəns/"
+      },
+      {
+        "english": "Experiment",
+        "vietnamese": "Thí nghiệm khoa học",
+        "meaning": "n. a scientific procedure undertaken to make a discovery, test a hypothesis, or demonstrate a known fact",
+        "wordForms": "experimental (adj)",
+        "pronunciation": "/ik'sperimənt/"
+      },
+      {
+        "english": "Hypothesis",
+        "vietnamese": "Giả thuyết",
+        "meaning": "n. a supposition or proposed explanation made on the basis of limited evidence as a starting point for further investigation",
+        "wordForms": "hypothetical (adj)",
+        "pronunciation": "/hai'pɒθəsis/"
+      },
+      {
+        "english": "Innovation",
+        "vietnamese": "Sự đổi mới, sáng kiến",
+        "meaning": "n. the action or process of innovating; a new method, idea, or product",
+        "wordForms": "innovate (v), innovative (adj)",
+        "pronunciation": "/,inə'veiʃn/"
+      },
+      {
+        "english": "Logical",
+        "vietnamese": "Hợp lý, theo logic",
+        "meaning": "adj. of or according to the rules of logic or formal argument",
+        "wordForms": "logic (n), logically (adv)",
+        "pronunciation": "/'lɒdʒikl/"
+      },
+      {
+        "english": "Observe",
+        "vietnamese": "Quan sát, theo dõi",
+        "meaning": "v. notice or perceive something and register it as being significant",
+        "wordForms": "observation (n), observatory (n)",
+        "pronunciation": "/əb'zɜ:v/"
+      },
+      {
+        "english": "Principle",
+        "vietnamese": "Nguyên lý, nguyên tắc",
+        "meaning": "n. a fundamental truth or proposition that serves as the foundation for a system of belief or behavior",
+        "wordForms": "",
+        "pronunciation": "/'prinsəpl/"
+      },
+      {
+        "english": "Reasoning",
+        "vietnamese": "Lập luận, suy luận",
+        "meaning": "n. the action of thinking about something in a logical, sensible way",
+        "wordForms": "reason (n, v)",
+        "pronunciation": "/'ri:zəniŋ/"
+      },
+      {
+        "english": "Theory",
+        "vietnamese": "Lý thuyết, học thuyết",
+        "meaning": "n. a supposition or a system of ideas intended to explain something",
+        "wordForms": "theoretical (adj), theorist (n)",
+        "pronunciation": "/'θiəri/"
+      },
+      {
+        "english": "Valid",
+        "vietnamese": "Có giá trị, hợp lý, có căn cứ",
+        "meaning": "adj. having a sound basis in logic or fact; reasonably true",
+        "wordForms": "validity (n), validate (v)",
+        "pronunciation": "/'vælid/"
+      }
+    ]
+  }
+]

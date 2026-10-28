@@ -168,52 +168,63 @@ progressStore.set(demoUser.id, {
 // Seed Vocabulary from data/vocab.json
 function seedVocabulary() {
   try {
-    const vocabPath = path.resolve(__dirname, 'data', 'vocab.json');
-    if (!fs.existsSync(vocabPath)) {
-      console.warn('data/vocab.json not found, skipping vocabulary seeding.');
+    const dataDir = path.resolve(__dirname, 'data');
+    if (!fs.existsSync(dataDir)) {
+      console.warn('data directory not found, skipping vocabulary seeding.');
       return;
     }
-    const rawData = fs.readFileSync(vocabPath, 'utf-8');
-    const topicDTOs = JSON.parse(rawData);
+    const files = fs.readdirSync(dataDir).filter((f) => f.endsWith('.json'));
+    for (const file of files) {
+      try {
+        const filePath = path.join(dataDir, file);
+        const rawData = fs.readFileSync(filePath, 'utf-8');
+        const topicDTOs = JSON.parse(rawData);
+        if (!Array.isArray(topicDTOs)) continue;
 
-    for (const item of topicDTOs) {
-      const bookName = item.book || 'Essential Vocabulary';
-      let book = books.find((b) => b.name === bookName);
-      if (!book) {
-        book = {
-          id: nextBookId++,
-          name: bookName,
-          description: `Official vocabulary list for ${bookName}`,
-          coverImage: '',
-        };
-        books.push(book);
-      }
+        for (const item of topicDTOs) {
+          const bookName = item.book || 'Essential Vocabulary';
+          let book = books.find((b) => b.name === bookName);
+          if (!book) {
+            book = {
+              id: nextBookId++,
+              name: bookName,
+              description: bookName.includes('Oxford')
+                ? 'Bộ 3000 từ vựng tiếng Anh thông dụng và quan trọng nhất theo chuẩn Oxford (A1 - B2)'
+                : `Danh sách từ vựng chuẩn ${bookName}`,
+              coverImage: '',
+            };
+            books.push(book);
+          }
 
-      const topic: Topic = {
-        id: nextTopicId++,
-        name: item.name,
-        book,
-        userId: null,
-      };
-      topics.push(topic);
-
-      if (Array.isArray(item.words)) {
-        for (const w of item.words) {
-          const word: Word = {
-            id: nextWordId++,
-            english: w.english || '',
-            vietnamese: w.vietnamese || '',
-            meaning: w.meaning || '',
-            pronunciation: w.pronunciation || '',
-            wordForms: w.wordForms || '',
-            synonyms: '',
-            antonyms: '',
-            example: '',
-            grammar: '',
-            topic,
+          const topic: Topic = {
+            id: nextTopicId++,
+            name: item.name,
+            book,
+            userId: null,
           };
-          words.push(word);
+          topics.push(topic);
+
+          if (Array.isArray(item.words)) {
+            for (const w of item.words) {
+              const word: Word = {
+                id: nextWordId++,
+                english: w.english || '',
+                vietnamese: w.vietnamese || '',
+                meaning: w.meaning || '',
+                pronunciation: w.pronunciation || '',
+                wordForms: w.wordForms || '',
+                synonyms: w.synonyms || '',
+                antonyms: w.antonyms || '',
+                example: w.example || '',
+                grammar: w.grammar || '',
+                topic,
+              };
+              words.push(word);
+            }
+          }
         }
+      } catch (fileErr) {
+        console.error(`Error reading ${file}:`, fileErr);
       }
     }
     console.log(`Seeded ${books.length} books, ${topics.length} topics, ${words.length} words.`);
