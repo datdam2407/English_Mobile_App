@@ -64,6 +64,15 @@ export const api = {
     return fetchWithCache(`${API_URL}/words/topic/${topicId}`, {}, 120 * 1000)
   },
 
+  async getAllWords() {
+    return fetchWithCache(`${API_URL}/words`, {}, 180 * 1000)
+  },
+
+  async searchWords(query) {
+    if (!query || !query.trim()) return []
+    return fetch(`${API_URL}/words/search?q=${encodeURIComponent(query.trim())}`).then(r => r.json())
+  },
+
   async createBook(book) {
     clearApiCache('/api/books')
     const response = await fetch(`${API_URL}/books`, {

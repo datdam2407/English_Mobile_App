@@ -654,6 +654,21 @@ app.get('/api/words', (_req: Request, res: Response) => {
   return res.json(words);
 });
 
+app.get('/api/words/search', (req: Request, res: Response) => {
+  const q = ((req.query.q as string) || '').toLowerCase().trim();
+  if (!q) return res.json([]);
+  const limit = parseInt((req.query.limit as string) || '40', 10);
+  const matches = words
+    .filter(
+      (w) =>
+        w.english.toLowerCase().includes(q) ||
+        w.vietnamese.toLowerCase().includes(q) ||
+        (w.meaning && w.meaning.toLowerCase().includes(q))
+    )
+    .slice(0, Math.min(limit, 100));
+  return res.json(matches);
+});
+
 app.get('/api/words/topic/:topicId', (req: Request, res: Response) => {
   const topicId = parseInt(req.params.topicId, 10);
   const list = words.filter((w) => w.topic && w.topic.id === topicId);

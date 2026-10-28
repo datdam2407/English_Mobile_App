@@ -1,38 +1,43 @@
 <template>
   <div class="mobile-nav-wrapper">
-    <!-- Bottom Navigation Bar for Mobile -->
+    <!-- Bottom Navigation Bar for Mobile (4 Core Pillars + More) -->
     <nav class="mobile-bottom-nav" role="navigation" aria-label="Mobile Navigation">
+      <!-- 1. Home -->
       <router-link to="/" class="mobile-nav-item" exact-active-class="active" @click="closeDrawer">
         <div class="nav-icon-wrapper">
           <FeatherIcon type="home" :size="20" />
         </div>
-        <span class="nav-label">Trang chủ</span>
+        <span class="nav-label">Home</span>
       </router-link>
 
-      <router-link to="/review" class="mobile-nav-item" active-class="active" @click="closeDrawer">
+      <!-- 2. Learn -->
+      <router-link to="/book/1" class="mobile-nav-item" active-class="active" @click="closeDrawer">
         <div class="nav-icon-wrapper">
-          <FeatherIcon type="rotate-cw" :size="20" />
+          <FeatherIcon type="book-open" :size="20" />
+        </div>
+        <span class="nav-label">Học từ</span>
+      </router-link>
+
+      <!-- 3. Dictionary -->
+      <router-link to="/dictionary" class="mobile-nav-item" active-class="active" @click="closeDrawer">
+        <div class="nav-icon-wrapper">
+          <FeatherIcon type="search" :size="20" />
+        </div>
+        <span class="nav-label">Từ điển</span>
+      </router-link>
+
+      <!-- 4. Progress -->
+      <router-link to="/progress" class="mobile-nav-item" active-class="active" @click="closeDrawer">
+        <div class="nav-icon-wrapper">
+          <FeatherIcon type="trending-up" :size="20" />
           <span v-if="reviewStats.dueToday > 0" class="badge-dot">
             {{ reviewStats.dueToday > 99 ? '99+' : reviewStats.dueToday }}
           </span>
         </div>
-        <span class="nav-label">Ôn tập</span>
+        <span class="nav-label">Tiến độ</span>
       </router-link>
 
-      <router-link to="/grammar" class="mobile-nav-item" active-class="active" @click="closeDrawer">
-        <div class="nav-icon-wrapper">
-          <FeatherIcon type="book" :size="20" />
-        </div>
-        <span class="nav-label">Ngữ pháp</span>
-      </router-link>
-
-      <router-link to="/speaking-practice" class="mobile-nav-item" active-class="active" @click="closeDrawer">
-        <div class="nav-icon-wrapper">
-          <FeatherIcon type="mic" :size="20" />
-        </div>
-        <span class="nav-label">Luyện nói</span>
-      </router-link>
-
+      <!-- 5. More (Drawer) -->
       <button class="mobile-nav-item btn-menu" :class="{ active: isDrawerOpen }" @click="toggleDrawer" aria-label="Mở menu">
         <div class="nav-icon-wrapper">
           <FeatherIcon :type="isDrawerOpen ? 'x' : 'menu'" :size="20" />

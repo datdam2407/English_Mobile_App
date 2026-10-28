@@ -10,7 +10,15 @@
         <!-- Main navigation links visible to everyone -->
         <router-link to="/" class="nav-link nav-link-desktop">
           <FeatherIcon type="home" :size="18" class="nav-icon" />
-          <span>Trang chủ</span>
+          <span>Home</span>
+        </router-link>
+        <router-link to="/dictionary" class="nav-link nav-link-desktop">
+          <FeatherIcon type="search" :size="18" class="nav-icon" />
+          <span>Từ điển</span>
+        </router-link>
+        <router-link to="/progress" class="nav-link nav-link-desktop">
+          <FeatherIcon type="trending-up" :size="18" class="nav-icon" />
+          <span>Tiến độ</span>
         </router-link>
         <router-link to="/review" class="nav-link nav-link-desktop">
           <FeatherIcon type="rotate-cw" :size="18" class="nav-icon" />

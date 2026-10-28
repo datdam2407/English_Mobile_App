@@ -104,6 +104,16 @@ const routes = [
     path: '/grammar/:tense',
     name: 'GrammarDetail',
     component: () => import('../views/GrammarDetailView.vue')
+  },
+  {
+    path: '/dictionary',
+    name: 'Dictionary',
+    component: () => import('../views/DictionaryView.vue')
+  },
+  {
+    path: '/progress',
+    name: 'Progress',
+    component: () => import('../views/ProgressView.vue')
   }
 ]
 

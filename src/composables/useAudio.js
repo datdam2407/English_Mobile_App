@@ -2,13 +2,12 @@ import { ref } from 'vue'
 
 export function useAudio() {
   const isPlaying = ref(false)
-  const audio = ref(null)
+  const currentPlayingWord = ref('')
+  const currentPlayingAccent = ref('US') // 'UK' or 'US'
 
-  const playAudio = async (word) => {
-    if (isPlaying.value) return
+  const playAudio = async (word, accent = 'US') => {
+    if (!word) return
 
-    //Web Speech API
-    // Check if Web Speech API is supported
     if (!('speechSynthesis' in window)) {
       console.warn('Web Speech API is not supported in this browser')
       return
@@ -16,78 +15,59 @@ export function useAudio() {
 
     try {
       isPlaying.value = true
-      
+      currentPlayingWord.value = word
+      currentPlayingAccent.value = accent.toUpperCase()
+
       // Cancel any ongoing speech
       speechSynthesis.cancel()
-      
+
       const utterance = new SpeechSynthesisUtterance(word)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.9 // Slightly slower for clarity
+      const targetLang = accent.toUpperCase() === 'UK' ? 'en-GB' : 'en-US'
+      utterance.lang = targetLang
+      utterance.rate = 0.88 // Clear, natural speed
       utterance.pitch = 1
-      
+
+      // Pick matching voice if available
+      const voices = speechSynthesis.getVoices()
+      if (voices && voices.length > 0) {
+        const matchingVoice = voices.find(v => 
+          accent.toUpperCase() === 'UK'
+            ? v.lang.startsWith('en-GB') || v.lang.startsWith('en_GB')
+            : v.lang.startsWith('en-US') || v.lang.startsWith('en_US')
+        )
+        if (matchingVoice) {
+          utterance.voice = matchingVoice
+        }
+      }
+
       utterance.onend = () => {
         isPlaying.value = false
+        currentPlayingWord.value = ''
       }
-      
+
       utterance.onerror = (e) => {
         console.error('Speech synthesis error:', e)
         isPlaying.value = false
+        currentPlayingWord.value = ''
       }
-      
+
       speechSynthesis.speak(utterance)
     } catch (error) {
       console.error('Error with speech synthesis:', error)
       isPlaying.value = false
+      currentPlayingWord.value = ''
     }
-
-    //Free Dictionary API
-    // try {
-    //   isPlaying.value = true
-    //   
-    //   // Free Dictionary API
-    //   const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    //   const data = await response.json()
-
-    //   if (Array.isArray(data) && data.length > 0) {
-    //     const phonetics = data[0].phonetics
-    //     // Find the first audio available
-    //     let audioUrl = phonetics.find(p => p.audio && p.audio.length > 0)?.audio
-
-    //     if (audioUrl) {
-    //       // Fix protocol-relative URLs
-    //       if (audioUrl.startsWith('//')) {
-    //         audioUrl = 'https:' + audioUrl
-    //       }
-
-    //       if (audio.value) {
-    //         audio.value.pause()
-    //         audio.value = null
-    //       }
-    //       
-    //       audio.value = new Audio(audioUrl)
-    //       audio.value.onended = () => {
-    //         isPlaying.value = false
-    //       }
-    //       audio.value.play().catch(e => {
-    //         console.error('Audio play error:', e)
-    //         isPlaying.value = false
-    //       })
-    //     } else {
-    //       console.warn('No audio found for word:', word)
-    //       isPlaying.value = false
-    //     }
-    //   } else {
-    //     console.warn('Word not found in dictionary:', word)
-    //     isPlaying.value = false
-    //   }
-    // } catch (error) {
-    //   console.error('Error fetching audio:', error)
-    //   isPlaying.value = false
-    // }
   }
+
+  const playAudioUK = (word) => playAudio(word, 'UK')
+  const playAudioUS = (word) => playAudio(word, 'US')
 
   return {
     isPlaying,
-    playAudio
+    currentPlayingWord,
+    currentPlayingAccent,
+    playAudio,
+    playAudioUK,
+    playAudioUS
   }
 }
