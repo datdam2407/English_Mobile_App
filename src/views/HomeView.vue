@@ -15,7 +15,32 @@
       @close="isWordDetailOpen = false"
     />
 
-    <!-- Today's Learning & Daily Goal Hero -->
+    <!-- Quick Interactive Flashcard Modal -->
+    <Transition name="modal-fade">
+      <div v-if="showFlashcardModal" class="flashcard-modal-backdrop" @click.self="showFlashcardModal = false">
+        <div class="flashcard-modal-box card animate-slideUp">
+          <div class="modal-header-row">
+            <div class="modal-title-wrap">
+              <span class="modal-badge">
+                <FeatherIcon type="layers" :size="13" /> Flashcard Deck
+              </span>
+              <h3 class="modal-title">Lật Thẻ Từ Vựng Cốt Lõi</h3>
+            </div>
+            <button class="btn-close-circle" @click="showFlashcardModal = false" title="Đóng">
+              <FeatherIcon type="x" :size="18" />
+            </button>
+          </div>
+
+          <Flashcard
+            :cards="featuredFlashcards"
+            title="Luyện nhớ từ"
+            @completed="showFlashcardModal = false"
+          />
+        </div>
+      </div>
+    </Transition>
+
+    <!-- SECTION 1: Today's Learning & Daily Goal Hero -->
     <section class="today-hero card">
       <div class="today-hero-header">
         <div class="today-hero-title-group">
@@ -64,7 +89,7 @@
         </div>
       </div>
 
-      <!-- Quick Action Cards (3 Nhu cầu: Ôn tập, Học mới, Tra từ) -->
+      <!-- Quick Action Cards (3 Nhu cầu: Ôn tập, Học mới Flashcard, Tra từ) -->
       <div class="quick-actions-grid">
         <!-- 1. Ôn tập từ vựng -->
         <div class="action-card card-clickable" @click="startSRSReview">
@@ -86,17 +111,17 @@
           <FeatherIcon type="chevron-right" :size="16" class="action-arrow" />
         </div>
 
-        <!-- 2. Học từ mới -->
-        <div class="action-card card-clickable" @click="goToLearnNewWords">
+        <!-- 2. Học từ mới & Lật Flashcard -->
+        <div class="action-card card-clickable" @click="openFlashcardDeck">
           <div class="action-card-icon learn-bg">
-            <FeatherIcon type="book-open" :size="20" />
+            <FeatherIcon type="layers" :size="20" />
           </div>
           <div class="action-card-body">
             <div class="action-card-header">
-              <span class="action-title">Học từ mới</span>
-              <span class="action-pill accent">~5 từ · 3 phút</span>
+              <span class="action-title">Học từ mới (Flashcard)</span>
+              <span class="action-pill accent">Lật thẻ 3D</span>
             </div>
-            <p class="action-desc">Oxford 3000 & 600 từ TOEIC thiết yếu</p>
+            <p class="action-desc">Chạm lật thẻ xem định nghĩa & phát âm</p>
           </div>
           <FeatherIcon type="chevron-right" :size="16" class="action-arrow" />
         </div>
@@ -118,6 +143,44 @@
       </div>
     </section>
 
+    <!-- SECTION 2: Sách Từ Vựng (Cohesive layout matching the first section) -->
+    <section class="books-section card">
+      <div class="today-hero-header books-header-row">
+        <div class="today-hero-title-group">
+          <span class="greeting-badge books-badge">
+            <FeatherIcon type="book-open" :size="14" /> Thư viện từ vựng
+          </span>
+          <h2 class="today-greeting books-title">Sách Từ Vựng</h2>
+        </div>
+        <div class="books-header-actions">
+          <span class="books-count-badge" v-if="books.length > 0">
+            <FeatherIcon type="layers" :size="13" /> {{ books.length }} bộ sách
+          </span>
+        </div>
+      </div>
+
+      <div v-if="loading" class="loading">
+        <span class="animate-pulse">Đang tải sách từ vựng...</span>
+      </div>
+
+      <div v-else-if="books.length === 0" class="empty-state">
+        <p>Chưa có sách nào.</p>
+        <router-link to="/admin" class="btn btn-primary">
+          Thêm sách mới
+        </router-link>
+      </div>
+
+      <div v-else class="books-grid">
+        <BookCard
+          v-for="book in books"
+          :key="book.id"
+          :book="book"
+          :topic-count="topicCounts[book.id] || 0"
+          @click="goToBook(book.id)"
+        />
+      </div>
+    </section>
+
     <!-- Mobile PWA App Banner -->
     <div v-if="!isInstalled && (isInstallable || isIOS)" class="mobile-pwa-banner card">
       <div class="banner-icon-col">
@@ -133,38 +196,7 @@
       </button>
     </div>
 
-    <!-- 1. Sách Từ Vựng -->
-    <section class="books-section">
-      <div class="section-header-row">
-        <h2 class="section-title">
-          <FeatherIcon type="book" :size="22" /> Sách Từ Vựng
-        </h2>
-        <span class="books-count-badge" v-if="books.length > 0">{{ books.length }} bộ sách</span>
-      </div>
-
-      <div v-if="loading" class="loading">
-        <span class="animate-pulse">Đang tải sách từ vựng...</span>
-      </div>
-
-      <div v-else-if="books.length === 0" class="empty-state">
-        <p>Chưa có sách nào.</p>
-        <router-link to="/admin" class="btn btn-primary">
-          Thêm sách mới
-        </router-link>
-      </div>
-
-      <div v-else class="grid grid-cols-2">
-        <BookCard
-          v-for="book in books"
-          :key="book.id"
-          :book="book"
-          :topic-count="topicCounts[book.id] || 0"
-          @click="goToBook(book.id)"
-        />
-      </div>
-    </section>
-
-    <!-- 2. Luyện tập với AI -->
+    <!-- SECTION 3: Luyện tập với AI -->
     <section class="ai-practice-section">
       <h2 class="section-title">
         <FeatherIcon type="cpu" :size="22" /> Luyện Tập Với AI
@@ -217,12 +249,14 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import BookCard from '../components/BookCard.vue'
 import FeatherIcon from '../components/FeatherIcon.vue'
+import Flashcard from '../components/Flashcard.vue'
 import OnboardingModal from '../components/OnboardingModal.vue'
 import WordDetailModal from '../components/WordDetailModal.vue'
 import { getAllBooks } from '../db/database.js'
 import { getReviewStats } from '../services/srs.js'
 import { dictionaryStorage } from '../services/dictionaryStorage.js'
 import { usePWAInstall } from '../composables/usePWAInstall.js'
+import { api } from '../services/api.js'
 
 const router = useRouter()
 const { isInstallable, isInstalled, isIOS, install } = usePWAInstall()
@@ -232,10 +266,12 @@ const topicCounts = ref({})
 const loading = ref(true)
 const reviewStats = ref({ dueToday: 0, reviewedToday: 0, newToday: 0 })
 const showOnboarding = ref(false)
+const showFlashcardModal = ref(false)
 const userGoal = ref(dictionaryStorage.getUserGoal())
 
 const selectedWord = ref(null)
 const isWordDetailOpen = ref(false)
+const featuredFlashcards = ref([])
 
 const greetingText = computed(() => {
   const hour = new Date().getHours()
@@ -272,6 +308,10 @@ function handleOnboardingComplete(goal) {
   userGoal.value = goal || dictionaryStorage.getUserGoal()
 }
 
+function openFlashcardDeck() {
+  showFlashcardModal.value = true
+}
+
 onMounted(async () => {
   // Check if first-time user
   if (!dictionaryStorage.isOnboarded()) {
@@ -293,6 +333,17 @@ onMounted(async () => {
       counts[book.id] = book.topicCount ?? 0
     }
     topicCounts.value = counts
+
+    // Load sample cards for Flashcard component from Oxford or TOEIC
+    try {
+      const allWords = await api.getAllWords()
+      if (allWords && allWords.length > 0) {
+        // Pick 10 sample words for flashcard deck
+        featuredFlashcards.value = allWords.slice(0, 15)
+      }
+    } catch (e) {
+      console.warn('Could not load words for flashcard, fallback default will be used', e)
+    }
   } catch (error) {
     console.error('Error loading home data:', error)
   } finally {
@@ -307,14 +358,6 @@ function continueLearning() {
     router.push(`/book/${books.value[0].id}`)
   } else {
     router.push('/progress')
-  }
-}
-
-function goToLearnNewWords() {
-  if (books.value.length > 0) {
-    router.push(`/book/${books.value[0].id}`)
-  } else {
-    router.push('/dictionary')
   }
 }
 
@@ -348,13 +391,13 @@ function startSRSReview() {
   padding-bottom: 2.5rem;
 }
 
-/* Today Hero Card */
+/* SECTION 1: Today Hero Card */
 .today-hero {
   background: linear-gradient(135deg, rgba(21, 183, 158, 0.08) 0%, rgba(14, 147, 132, 0.14) 100%);
   border: 1px solid rgba(21, 183, 158, 0.28);
   border-radius: var(--radius-xl);
   padding: 1.25rem 1.4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -523,7 +566,7 @@ function startSRSReview() {
   white-space: nowrap;
 }
 
-/* Quick Actions Grid (Selectors 1, 2, 3) */
+/* Quick Actions Grid */
 .quick-actions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -649,6 +692,61 @@ function startSRSReview() {
   margin-left: 0.2rem;
 }
 
+/* SECTION 2: Sách Từ Vựng (Unified layout matching the first section) */
+.books-section {
+  background: linear-gradient(135deg, rgba(21, 183, 158, 0.08) 0%, rgba(14, 147, 132, 0.14) 100%);
+  border: 1px solid rgba(21, 183, 158, 0.28);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.75rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.books-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.books-badge {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.14);
+}
+
+.books-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.books-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Mobile PWA Banner */
 .mobile-pwa-banner {
   display: flex;
@@ -706,37 +804,7 @@ function startSRSReview() {
   white-space: nowrap;
 }
 
-/* Section Common */
-.section-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.15rem;
-  gap: 0.5rem;
-}
-
-.section-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
-}
-
-.books-count-badge {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  background: var(--card-bg);
-  padding: 0.2rem 0.55rem;
-  border-radius: 9999px;
-  border: 1px solid var(--border-color);
-  white-space: nowrap;
-}
-
-.books-section,
+/* SECTION 3: AI Practice Section */
 .ai-practice-section {
   margin-bottom: 2.25rem;
   width: 100%;
@@ -744,27 +812,16 @@ function startSRSReview() {
   box-sizing: border-box;
 }
 
-.loading {
-  text-align: center;
-  padding: 3rem;
-  color: var(--text-muted);
-}
-
-.empty-state {
-  text-align: center;
-  padding: 2.5rem 1.5rem;
-  background-color: var(--card-bg);
-  border-radius: var(--radius-xl);
-  border: 2px dashed var(--border-color);
-  box-sizing: border-box;
-}
-
-.empty-state p {
-  color: var(--text-muted);
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-/* AI Practice Section */
 .practice-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -849,9 +906,104 @@ function startSRSReview() {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.loading {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--border-color);
+  box-sizing: border-box;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Flashcard Modal */
+.flashcard-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.flashcard-modal-box {
+  width: 100%;
+  max-width: 580px;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 1.35rem 1.45rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.15rem;
+}
+
+.modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--mint-600);
+  background: rgba(21, 183, 158, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  margin-bottom: 0.25rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.btn-close-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-close-circle:hover {
+  color: var(--text-primary);
+  border-color: var(--mint-400);
+}
+
 /* Responsive adjustments for Tablets & Mobile */
 @media (max-width: 860px) {
   .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .books-grid {
     grid-template-columns: 1fr;
   }
 
@@ -861,19 +1013,22 @@ function startSRSReview() {
 }
 
 @media (max-width: 640px) {
-  .today-hero {
+  .today-hero,
+  .books-section {
     padding: 1rem 0.9rem;
     margin-bottom: 1.25rem;
     border-radius: var(--radius-lg);
   }
 
-  .today-hero-header {
+  .today-hero-header,
+  .books-header-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.65rem;
   }
 
-  .today-greeting {
+  .today-greeting,
+  .books-title {
     font-size: 1.25rem;
   }
 
@@ -922,6 +1077,10 @@ function startSRSReview() {
   .mobile-pwa-banner .btn-install-now {
     width: 100%;
     justify-content: center;
+  }
+
+  .flashcard-modal-box {
+    padding: 1rem;
   }
 }
 </style>
